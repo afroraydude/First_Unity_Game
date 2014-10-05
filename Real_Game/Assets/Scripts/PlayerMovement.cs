@@ -2,14 +2,20 @@
 using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
+	public float moveSpeed;
+
+	private Vector3 input;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+	{
+		input = new Vector3 (Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+		print (input);
 	}
 }
