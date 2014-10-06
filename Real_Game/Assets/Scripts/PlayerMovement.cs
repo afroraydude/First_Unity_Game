@@ -29,11 +29,12 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 
-	void OnTrigerEnter(Collider other)
+	void OnTriggerEnter(Collider other)
 	{
 		if (other.transform.tag == "Goal")
 		{
 			GameManager.CompleteLevel();
+
 		}
 	}
 
