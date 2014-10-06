@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
 		}
 		else
 		{
-			print ("YOU WIN!"
+			print ("YOU WIN!");
 		}
 	}
 }
