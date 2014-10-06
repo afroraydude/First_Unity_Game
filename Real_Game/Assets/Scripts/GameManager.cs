@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
 
 	public static void CompleteLevel()
 	{
-		if (currentLevel < 2)
+		if (currentLevel < 3)
 		{
 			currentLevel +=1;
 			Application.LoadLevel(currentLevel);
