@@ -29,14 +29,6 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision other)
-	{
-		if (other.transform.tag == "Enemy")
-		{
-			Die ();
-		}
-	}
-
 	void OnTrigerEnter(Collider other)
 	{
 		if (other.transform.tag == "Goal")
@@ -44,6 +36,15 @@ public class PlayerMovement : MonoBehaviour {
 			GameManager.CompleteLevel();
 		}
 	}
+
+	void OnCollisionEnter(Collision other)
+	{
+		if (other.transform.tag == "Enemy")
+		{
+			Die ();
+		}
+	}
+	
 
 	void Die()
 	{
