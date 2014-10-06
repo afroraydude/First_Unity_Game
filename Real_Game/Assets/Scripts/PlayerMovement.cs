@@ -23,14 +23,31 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			rigidbody.AddForce(input * moveSpeed);
 		}
+		if (transform.position.y < -2)
+		{
+			Die ();
+		}
 	}
 
 	void OnCollisionEnter(Collision other)
 	{
 		if (other.transform.tag == "Enemy")
 		{
-			Instantiate(deathParticals, transform.position, Quaternion.identity);
-			transform.position = spawn;
+			Die ();
 		}
+	}
+
+	void OnTrigerEnter(Collider other)
+	{
+		if (other.transform.tag == "Goal")
+		{
+			GameManager.CompleteLevel();
+		}
+	}
+
+	void Die()
+	{
+		Instantiate(deathParticals, transform.position, Quaternion.identity);
+		transform.position = spawn;
 	}
 }
