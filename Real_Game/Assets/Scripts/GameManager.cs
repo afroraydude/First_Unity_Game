@@ -10,7 +10,14 @@ public class GameManager : MonoBehaviour {
 
 	public static void CompleteLevel()
 	{
-		currentLevel +=1;
-		Application.LoadLevel(currentLevel);
+		if (currentLevel < 2)
+		{
+			currentLevel +=1;
+			Application.LoadLevel(currentLevel);
+		}
+		else
+		{
+			print ("YOU WIN!"
+		}
 	}
 }
