@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
 	void Start () 
 	{
 		manager = manager.GetComponent<GameManager>();
+		//Destroy(gameObject);
 	}
 
 	void OnGUI()
@@ -28,7 +29,7 @@ public class MainMenu : MonoBehaviour
 		if (GUI.Button(new Rect (10,150,100,45), "Play"))
 		{
 			print ("Button 'Play' has been pressed!");
-			manager.CompleteLevel ();
+			manager.MainMenuToLevelOne();
 		}
 		if (GUI.Button(new Rect (10,205,100,45), "Quit"))
 		{
