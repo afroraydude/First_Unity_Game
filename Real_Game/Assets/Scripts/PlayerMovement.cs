@@ -2,8 +2,11 @@
 using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
+
+	public GameManager manager;
 	public float moveSpeed;
 	private float maxSpeed = 5f;
+
 	public GameObject deathParticals;
 
 	private Vector3 input;
@@ -13,6 +16,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Start () 
 	{
 		spawn = transform.position;
+		manager = manager.GetComponent<GameManager>();
 	}
 	
 	// Update is called once per frame
@@ -33,7 +37,7 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		if (other.transform.tag == "Goal")
 		{
-			GameManager.CompleteLevel();
+			manager.CompleteLevel();
 
 		}
 	}

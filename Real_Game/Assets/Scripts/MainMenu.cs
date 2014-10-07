@@ -4,7 +4,14 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class MainMenu : MonoBehaviour 
 {
+
 	public GUISkin skin;
+	public GameManager manager;
+
+	void Start () 
+	{
+		manager = manager.GetComponent<GameManager>();
+	}
 
 	void OnGUI()
 	{
@@ -21,7 +28,7 @@ public class MainMenu : MonoBehaviour
 		if (GUI.Button(new Rect (10,150,100,45), "Play"))
 		{
 			print ("Button 'Play' has been pressed!");
-			GameManager.CompleteLevel ();
+			manager.CompleteLevel ();
 		}
 		if (GUI.Button(new Rect (10,205,100,45), "Quit"))
 		{

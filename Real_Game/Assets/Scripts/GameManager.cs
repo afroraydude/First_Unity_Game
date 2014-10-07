@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
-	public static int currentScore;
-	public static int highScore;
-	public static int currentLevel = 0;
-	public static int unlockedLevel;
+	public int currentScore;
+	public int highScore;
+	public int currentLevel = 0;
+	public int unlockedLevel;
 	public Rect stopwatchRect;
 	public Rect stopwatchBoxRect;
 
@@ -13,6 +13,18 @@ public class GameManager : MonoBehaviour {
 
 	public float startTime;
 	private string currentTime;
+
+	void Start()
+	{
+		if (PlayerPrefs.GetInt("LevelsCompleted") > 0)
+		{
+			currentLevel = PlayerPrefs.GetInt("LevelsCompleted");
+		}
+		else
+		{
+			currentLevel = 0;
+		}
+	}
 
 	void Update()
 	{
@@ -26,11 +38,15 @@ public class GameManager : MonoBehaviour {
 		GUI.Label(stopwatchRect, currentTime, skin.GetStyle ("Stopwatch"));
 	}
 
-	public static void CompleteLevel()
+	public void CompleteLevel()
 	{
 		if (currentLevel < 3)
 		{
 			currentLevel +=1;
+			PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
+			PlayerPrefs.SetFloat("Level" + currentLevel.ToString() + "Score", startTime);
+			PlayerPrefs.GetInt("LevelsCompleted");
+			PlayerPrefs.Save();
 			Application.LoadLevel(currentLevel);
 		}
 		else
