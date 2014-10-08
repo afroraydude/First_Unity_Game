@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour {
 
 	public void CompleteLevel()
 	{
-		if(highScore < startTime)
+		if(highScore > startTime || highScore == 0)
 		{
 			highScore = startTime;
 			highTime = string.Format ("{0:0.0}", highScore);

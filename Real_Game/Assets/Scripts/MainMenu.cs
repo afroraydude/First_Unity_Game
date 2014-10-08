@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
 		 * height/y offset.
 		*/
 		GUI.Label (new Rect (10,10,440,45), "Afroraydude's Puzzle Game");
-		GUI.Label (new Rect (10,65,440,45), "Pre Alpha Version 1");
+		GUI.Label (new Rect (10,65,440,45), "Pre Alpha Version 2");
 		if (GUI.Button(new Rect (10,150,100,45), "Play"))
 		{
 			print ("Button 'Play' has been pressed!");
