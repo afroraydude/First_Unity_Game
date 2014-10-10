@@ -2,22 +2,27 @@
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
-
+	
+	// Score based stuff
 	public float highScore = 0f;
+	
+	//Level based stuff
 	public int currentLevel = 0;
 	public int unlockedLevel;
 
+	// Things that deal with GUI or whatever
 	public Rect stopwatchRect;
 	public Rect stopwatchBoxRect;
 	public Rect highScoreRect;
 	public Rect highScoreBox;
-
 	public GUISkin skin;
-
+	
+	// Stuff that deals with the ingame stopwatch, which is my answer to the score system.	
 	public float startTime;
 	private string currentTime;
 	public string highTime;
-
+	
+	// Once the level loads this happens
 	void Start()
 	{
 		//DontDestroyOnLoad(gameObject);
@@ -31,12 +36,13 @@ public class GameManager : MonoBehaviour {
 		}
 
 	}
-
+	// This is ran every tick
 	void Update()
 	{
 		startTime += Time.deltaTime;
 		currentTime = string.Format ("{0:0.0}", startTime);
 	}
+	// GUI goes here
 	void OnGUI()
 	{
 		GUI.skin = skin;
@@ -46,6 +52,11 @@ public class GameManager : MonoBehaviour {
 		GUI.Box (highScoreBox, "");
 	}
 
+	/** 
+	* So the main menu doesn't need to use another object in the scene to run,
+	* Also so that there wont be a stopwatch calculationg time in the main menu.
+	* The end screen doesn't need this because it is just a GUI.
+	*/
 	public void MainMenuToLevelOne()
 	{
 		currentLevel +=1;
@@ -53,7 +64,8 @@ public class GameManager : MonoBehaviour {
 		PlayerPrefs.Save();
 		Application.LoadLevel(currentLevel);
 	}
-
+	// For when the player completes a level
+	// TODO: Fix issue in flash were it does not care if the high score is > or < the startTime, it always overrides it.
 	public void CompleteLevel()
 	{
 		if(highScore > startTime || highScore == 0)
@@ -77,6 +89,8 @@ public class GameManager : MonoBehaviour {
 			print ("YOU WIN!");
 		}
 	}
+	
+	// This needs to go away.
 	public void MainMenuStart()
 	{
 
