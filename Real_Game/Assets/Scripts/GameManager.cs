@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour {
 			PlayerPrefs.SetString("Level" + currentLevel.ToString() + "Score", highTime);
 		}
 
-		if (currentLevel < 3)
+		if (currentLevel < 5)
 		{
 			currentLevel +=1;
 			PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
@@ -88,11 +88,5 @@ public class GameManager : MonoBehaviour {
 		{
 			print ("YOU WIN!");
 		}
-	}
-	
-	// This needs to go away.
-	public void MainMenuStart()
-	{
-
 	}
 }

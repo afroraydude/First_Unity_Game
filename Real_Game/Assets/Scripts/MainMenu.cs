@@ -6,10 +6,10 @@ public class MainMenu : MonoBehaviour
 {
 
 	public GUISkin skin;
-	public Rect title = 10,10,440,45;
-	public Rect version = 10,65,440,45;
-	public Rect playButton = 10,150,100,45;
-	public Rect quitButton = 10,205,100,45;
+	public Rect title;
+	public Rect version;
+	public Rect playButton;
+	public Rect quitButton;
 	public GameManager manager;
 	
 	// Mostly only used to read the components in 
