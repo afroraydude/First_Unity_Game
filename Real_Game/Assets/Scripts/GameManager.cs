@@ -64,6 +64,14 @@ public class GameManager : MonoBehaviour {
 		PlayerPrefs.Save();
 		Application.LoadLevel(currentLevel);
 	}
+
+	public void BackToMainMenu()
+	{
+		currentLevel = 0;
+		PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
+		PlayerPrefs.Save();
+		Application.LoadLevel(currentLevel);
+	}
 	// For when the player completes a level
 	// TODO: Fix issue in flash were it does not care if the high score is > or < the startTime, it always overrides it.
 	public void CompleteLevel()

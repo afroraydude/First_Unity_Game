@@ -4,7 +4,20 @@ using System.Collections;
 public class WinScript : MonoBehaviour {
 	public GUISkin skin;
 	public Rect winRect;
-	public string winString = "Game over, you win!";
+	protected string winString = "Game over, you win!";
+
+	public GameManager manager;
+	// Mostly only used to read the components in 
+	void Start () 
+	{
+		manager = manager.GetComponent<GameManager>();
+		//Destroy(gameObject);
+	}
+
+	// Update is called once per frame
+	void Update () {
+		
+	}
 
 	void OnGUI ()
 	{
@@ -15,15 +28,11 @@ public class WinScript : MonoBehaviour {
 			print ("Button 'Quit' has been pressed!");
 			Application.Quit ();
 		}
+		if (GUI.Button(new Rect (10,260,200,45), "Back to Main Menu"))
+		{
+			print ("Going back!");
+			manager.BackToMainMenu();
+		}
 	}
-
-	// Use this for initialization
-	void Start () {
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
