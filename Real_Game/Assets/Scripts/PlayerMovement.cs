@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 	public GameManager manager;
 	public float moveSpeed;
 	private float maxSpeed = 5f;
+	public int deathCount;
 
 	public GameObject deathParticals;
 
@@ -46,6 +47,7 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		if (other.transform.tag == "Enemy")
 		{
+			deathCount +=1;
 			Die ();
 		}
 	}
