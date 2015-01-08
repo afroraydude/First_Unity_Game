@@ -55,12 +55,13 @@ public class GameManager : MonoBehaviour {
 		GUI.Label (highScoreRect, PlayerPrefs.GetString("Level" + currentLevel.ToString() + "Score"));
 		GUI.Box (highScoreBox, "");
 	}
+	
+	
 
-	/** 
-	* So the main menu doesn't need to use another object in the scene to run,
-	* Also so that there wont be a stopwatch calculationg time in the main menu.
-	* The end screen doesn't need this because it is just a GUI.
+	/**
+	* Alternative to the Maine Menu having to save information
 	*/
+	
 	public void MainMenuToLevelOne()
 	{
 		currentLevel +=1;
