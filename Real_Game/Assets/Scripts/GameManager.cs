@@ -36,12 +36,16 @@ public class GameManager : MonoBehaviour {
 		}
 
 	}
+	
 	// This is ran every tick
 	void Update()
 	{
+		//This records the time it took to complete the level
 		startTime += Time.deltaTime;
+		//This puts it into a string so that it can be viewed on the GUI
 		currentTime = string.Format ("{0:0.0}", startTime);
 	}
+	
 	// GUI goes here
 	void OnGUI()
 	{
@@ -94,7 +98,8 @@ public class GameManager : MonoBehaviour {
 
 		else
 		{
-			print ("YOU WIN!");
+			print ("Please increase level amount.");
 		}
 	}
+	
 }
