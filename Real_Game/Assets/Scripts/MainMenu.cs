@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour
 		 * height/y offset.
 		*/
 		GUI.Label (title, "Afroraydude's Puzzle Game");
-		GUI.Label (version, "Pre Alpha Version 2");
+		GUI.Label (version, "Pre Alpha Version 4");
 		if (GUI.Button(playButton, "Play"))
 		{
 			print ("Button 'Play' has been pressed!");
