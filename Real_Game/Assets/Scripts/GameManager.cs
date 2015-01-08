@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour {
 
 	public void BackToMainMenu()
 	{
-		currentLevel = 0;
+		currentLevel -=1;
 		PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
 		PlayerPrefs.Save();
 		Application.LoadLevel(currentLevel);
