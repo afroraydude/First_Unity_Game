@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\New Unity Project\Assets\GamePatcherFree\WWW\versionInfo.xml">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LookAtCamera.cs">
     <Files>
-      <File FileName="..\..\..\New Unity Project\Assets\GamePatcherFree\WWW\versionInfo.xml" Line="10" Column="10" />
+      <File FileName="Assets\Scripts\LookAtCamera.cs" Line="15" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
