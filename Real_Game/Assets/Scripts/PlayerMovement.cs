@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float moveSpeed;
 	private float maxSpeed = 5f;
 	public int deathCount;
+	public int killY = -2;
 
 	public GameObject deathParticals;
 
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			rigidbody.AddForce(input * moveSpeed);
 		}
-		if (transform.position.y < -2)
+		if (transform.position.y < killY)
 		{
 			Die ();
 		}
