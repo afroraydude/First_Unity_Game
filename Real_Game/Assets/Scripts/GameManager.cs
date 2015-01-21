@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour {
 	* Alternative to the Maine Menu having to save information
 	*/
 	
-	public void MainMenuToLevelOne()
+	void MainMenuToLevelOne()
 	{
 		currentLevel +=1;
 		PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour {
 		Application.LoadLevel(currentLevel);
 	}
 
-	public void BackToMainMenu()
+	void BackToMainMenu()
 	{
 		currentLevel -=1;
 		PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour {
 	}
 	// For when the player completes a level
 	// TODO: Fix issue in flash were it does not care if the high score is > or < the startTime, it always overrides it.
-	public void CompleteLevel()
+	void CompleteLevel()
 	{
 		if(highScore > startTime || highScore == 0)
 		{
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour {
 			PlayerPrefs.SetString("Level" + currentLevel.ToString() + "Score", highTime);
 		}
 
-		if (currentLevel < 5)
+		if (currentLevel < 6)
 		{
 			currentLevel +=1;
 			PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
@@ -101,6 +101,11 @@ public class GameManager : MonoBehaviour {
 		{
 			print ("Please increase level amount.");
 		}
+	}
+	
+	void AfterGrading()
+	{
+		
 	}
 	
 }
