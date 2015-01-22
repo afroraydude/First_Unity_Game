@@ -1,6 +1,15 @@
 using UnityEngine;
 using System.Collections;
 
+/**
+* Created By Afroraydude
+* This class is the Framework Of the Game,
+* very large compred to the other classes
+* This does:
+* Level transitions
+* Score Keeping
+* Score Saving
+*/
 public class GameManager : MonoBehaviour {
 	
 	// Score based stuff
@@ -11,11 +20,12 @@ public class GameManager : MonoBehaviour {
 	public int unlockedLevels;
 	public int LevelGradingID = 6;
 
-	// Things that deal with GUI or whatever
+	// Things that deal with GUI
+	// why are there 2 of all of them? IDK
 	public Rect stopwatchRect;
 	public Rect stopwatchBoxRect;
 	public Rect highScoreRect;
-	public Rect highScoreBox;
+	public Rect highScoreBox; 
 	public GUISkin skin;
 	
 	// Stuff that deals with the ingame stopwatch, which is my answer to the score system.	
@@ -25,17 +35,17 @@ public class GameManager : MonoBehaviour {
 	
 	// Once the level loads this happens
 	void Start() {
+		unlockedLevels = PlayerPrefs.GetInt("LevelsCompleted");
 		// DontDestroyOnLoad(gameObject);
-		/**
-		* 
-		* if (PlayerPrefs.GetInt("LevelsCompleted") > 0) {
-			currentLevel = PlayerPrefs.GetInt("LevelsCompleted");
-		* }
-		* else
-		* {
-			currentLevel = 0;
-		* }
-		*/
+		if (unlockedLevels < currentLevel) {
+			PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
+			unlockedLevels = PlayerPrefs.GetInt("LevelsCompleted");
+			PlayerPrefs.Save();
+		}
+		
+		else {
+			// do nothing
+		}
 	}
 	
 	// This is ran every tick
@@ -70,7 +80,6 @@ public class GameManager : MonoBehaviour {
 	// For when the player completes a level
 	// TODO: Fix issue in flash were it does not care if the high score is > or < the startTime, it always overrides it.
 	public void CompleteLevel() {
-		unlockedLevels = PlayerPrefs.GetInt("LevelsCompleted");
 		
 		if(highScore > startTime || highScore == 0) {
 			highScore = startTime;
@@ -79,11 +88,6 @@ public class GameManager : MonoBehaviour {
 		}
 
 		if (currentLevel < 5) {
-			if (unlockedLevels < currentLevel) {
-				PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
-				PlayerPrefs.GetInt("LevelsCompleted");
-				PlayerPrefs.Save();
-			}
 			Application.LoadLevel(LevelGradingID);
 		}
 
@@ -91,6 +95,8 @@ public class GameManager : MonoBehaviour {
 			print ("Please increase level amount.");
 		}
 	}
+	
+	public void AtLevelBegin
 	
 	// After LevelGrading is done, this happens
 	public void AfterGrading() {
