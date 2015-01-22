@@ -13,10 +13,10 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 	
 	// Score based stuff
-	public float highScore = 0f;
+	public float highScore;
 	
 	// Level based stuff
-	public int currentLevel = 0;
+	public int currentLevel;
 	public int unlockedLevels;
 	public int LevelGradingID = 6;
 
@@ -37,10 +37,12 @@ public class GameManager : MonoBehaviour {
 	void Start() {
 		unlockedLevels = PlayerPrefs.GetInt("LevelsCompleted");
 		// DontDestroyOnLoad(gameObject);
+		// If the levels you unlocked is less than the level you are at
 		if (unlockedLevels < currentLevel) {
+			// make it the same
 			PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
-			unlockedLevels = PlayerPrefs.GetInt("LevelsCompleted");
 			PlayerPrefs.Save();
+			unlockedLevels = PlayerPrefs.GetInt("LevelsCompleted");
 		}
 		
 		else {
@@ -66,13 +68,17 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	public void MainMenuToLevelOne() {
+		// To go to Level 1 
 		currentLevel = 1;
+		/** This might not be required anymore:
 		PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
 		PlayerPrefs.Save();
 		Application.LoadLevel(currentLevel);
+		*/
 	}
 
 	public void BackToMainMenu() {
+		// To go back to Main Menu from the End Game Menu
 		currentLevel = 0;
 		Application.LoadLevel(currentLevel);
 	}
@@ -81,13 +87,17 @@ public class GameManager : MonoBehaviour {
 	// TODO: Fix issue in flash were it does not care if the high score is > or < the startTime, it always overrides it.
 	public void CompleteLevel() {
 		
-		if(highScore > startTime || highScore == 0) {
+		// If the high score is less than the time it took you to complete the level
+		if(highScore > startTime) {
+			// Make it equal the time it took you to complete the level
 			highScore = startTime;
 			highTime = string.Format ("{0:0.0}", highScore);
 			PlayerPrefs.SetString("Level" + currentLevel.ToString() + "Score", highTime);
 		}
 
+		// if the level you are at is less than the numer of levels in the game
 		if (currentLevel < 5) {
+			// Load the LevelGrading Scene
 			Application.LoadLevel(LevelGradingID);
 		}
 
@@ -96,14 +106,14 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	
-	public void AtLevelBegin
-	
-	// After LevelGrading is done, this happens
+	// After LevelGrading is done
 	public void AfterGrading() {
+		// Go up a level
 		currentLevel +=1;
 		Application.LoadLevel(currentLevel);
 	}
 	
+	// Pretty straightforward
 	public void StartGame() {
 		currentLevel = 0;
 	}
