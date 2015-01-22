@@ -26,16 +26,17 @@ public class GameManager : MonoBehaviour {
 	// Once the level loads this happens
 	void Start()
 	{
-		//DontDestroyOnLoad(gameObject);
-		if (PlayerPrefs.GetInt("LevelsCompleted") > 0)
-		{
+		// DontDestroyOnLoad(gameObject);
+		/**
+		* 
+		* if (PlayerPrefs.GetInt("LevelsCompleted") > 0) {
 			currentLevel = PlayerPrefs.GetInt("LevelsCompleted");
-		}
-		else
-		{
+		* }
+		* else
+		* {
 			currentLevel = 0;
-		}
-
+		* }
+		*/
 	}
 	
 	// This is ran every tick
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour {
 	
 	void MainMenuToLevelOne()
 	{
-		currentLevel +=1;
+		currentLevel = 1;
 		PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
 		PlayerPrefs.Save();
 		Application.LoadLevel(currentLevel);
@@ -73,9 +74,7 @@ public class GameManager : MonoBehaviour {
 
 	void BackToMainMenu()
 	{
-		currentLevel +=1;
-		PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
-		PlayerPrefs.Save();
+		currentLevel = 0;
 		Application.LoadLevel(currentLevel);
 	}
 	// For when the player completes a level
@@ -83,6 +82,7 @@ public class GameManager : MonoBehaviour {
 	void CompleteLevel()
 	{
 		unlockedLevels = PlayerPrefs.GetInt("LevelsCompleted");
+		
 		if(highScore > startTime || highScore == 0)
 		{
 			highScore = startTime;
@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour {
 
 		if (currentLevel < 5)
 		{
-			if(unlockedLevels > currentLevel) {
+			if (unlockedLevels < currentLevel) {
 				PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
 				PlayerPrefs.GetInt("LevelsCompleted");
 				PlayerPrefs.Save();
@@ -112,4 +112,7 @@ public class GameManager : MonoBehaviour {
 		Application.LoadLevel(currentLevel);
 	}
 	
+	void StartGame() {
+		currentLevel = 0;
+	}
 }
