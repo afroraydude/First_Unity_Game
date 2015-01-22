@@ -6,6 +6,8 @@ public class LevelGrading : MonoBehaviour {
         public string finalScoreLetter; // 
         public float[] timeGrading = new float[5]; // 5 for the 5 grades (A, B, C D, F)
         public int[] deathGrading = new int[5]; // 5 for the 5 grades (A, B, C D, F)
+        public string timeGradingLetter;
+        public string deathGradingLetter;
         
         
         void Start() {
@@ -18,6 +20,18 @@ public class LevelGrading : MonoBehaviour {
         
         void OnGUI() {
                 // I might want to do the GUI
+        }
+        
+        void GradeTime() {
+                
+        }
+        
+        void GradeDeaths() {
+                
+        }
+        
+        void GradeFinal () {
+                
         }
         
 }
