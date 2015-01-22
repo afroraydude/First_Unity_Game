@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour {
 	void AfterGrading()
 	{
 		currentLevel +=1;
+		Application.LoadLevel(currentLevel);
 	}
 	
 }
