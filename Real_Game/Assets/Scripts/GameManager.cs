@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour {
 	
 	//Level based stuff
 	public int currentLevel = 0;
-	public int unlockedLevel;
+	public int unlockedLevels;
+	public int LevelGradingID = 6;
 
 	// Things that deal with GUI or whatever
 	public Rect stopwatchRect;
@@ -72,7 +73,7 @@ public class GameManager : MonoBehaviour {
 
 	void BackToMainMenu()
 	{
-		currentLevel -=1;
+		currentLevel +=1;
 		PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
 		PlayerPrefs.Save();
 		Application.LoadLevel(currentLevel);
@@ -81,6 +82,7 @@ public class GameManager : MonoBehaviour {
 	// TODO: Fix issue in flash were it does not care if the high score is > or < the startTime, it always overrides it.
 	void CompleteLevel()
 	{
+		unlockedLevels = PlayerPrefs.GetInt("LevelsCompleted");
 		if(highScore > startTime || highScore == 0)
 		{
 			highScore = startTime;
@@ -88,13 +90,14 @@ public class GameManager : MonoBehaviour {
 			PlayerPrefs.SetString("Level" + currentLevel.ToString() + "Score", highTime);
 		}
 
-		if (currentLevel < 6)
+		if (currentLevel < 5)
 		{
-			currentLevel +=1;
-			PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
-			PlayerPrefs.GetInt("LevelsCompleted");
-			PlayerPrefs.Save();
-			Application.LoadLevel(currentLevel);
+			if(unlockedLevels > currentLevel) {
+				PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
+				PlayerPrefs.GetInt("LevelsCompleted");
+				PlayerPrefs.Save();
+			}
+			Application.LoadLevel(LevelGradingID);
 		}
 
 		else
@@ -105,7 +108,7 @@ public class GameManager : MonoBehaviour {
 	
 	void AfterGrading()
 	{
-		
+		currentLevel +=1;
 	}
 	
 }
