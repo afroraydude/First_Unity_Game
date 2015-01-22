@@ -16,8 +16,10 @@ public class MainMenu : MonoBehaviour
 	void Start () 
 	{
 		manager = manager.GetComponent<GameManager>();
+		manager.StartGame();
 		//Destroy(gameObject);
 	}
+	
 	// GUI 
 	void OnGUI()
 	{
