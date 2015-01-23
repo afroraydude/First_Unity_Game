@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// For destroying the particles
 public class Destroy : MonoBehaviour {
 	public float lifetime = 0;
 
