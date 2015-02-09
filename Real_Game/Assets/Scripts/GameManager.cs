@@ -128,4 +128,8 @@ public class GameManager : MonoBehaviour {
 	public void StartGame() {
 		currentLevel = 0;
 	}
+	
+	public void GetCurrentLevel() {
+		return currentLevel
+	}
 }
