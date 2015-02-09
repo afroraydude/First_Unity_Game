@@ -1,21 +1,24 @@
 using UnityEngine;
 using System.Collections;
 
+
 public class LevelGrading : MonoBehaviour {
         
         public GameManager manager;
         
-        public float finalScore; // This is the final score you recieve
-        public string finalScoreLetter; // 
+        public float[] finalGrading = new float[4]; // This is the final score you recieve
+        public char finalScoreLetter; // 
+        public float finalGradeScore;
         
         public float[] timeGrading = new float[4]; // 4 for the 4 grades (A, B, C, D)
-        public float timeGradingScore;
+        float timeGradingScore;
+        
         
         public int[] deathGrading = new int[4]; // 4 for the 4 grades (A, B, C, D)
-        public int deathGradingScore;
+        int deathGradingScore;
         
-        public char timeGradingLetter;
-        public char deathGradingLetter;
+        char timeGradingLetter;
+        char deathGradingLetter;
         
         
         void Start() {
@@ -30,7 +33,11 @@ public class LevelGrading : MonoBehaviour {
                 // I might want to do the GUI
         }
         
-        void GradeTime() {
+        void StartGrading () {
+                
+        }
+        
+        void GradeTime(float givinTime) {
                 // For A
                 if() {
                         
@@ -47,15 +54,35 @@ public class LevelGrading : MonoBehaviour {
                 else if () {
                         
                 }
-                else 
+                else {
+                        
+                }
                 
         }
         
-        void GradeDeaths() {
-                
+        void GradeDeaths(int givenDeaths) {
+                // For A
+                if() {
+                        
+                }
+                // For B
+                else if() {
+                        
+                }
+                // For C
+                else if() {
+                        
+                }
+                // For D
+                else if () {
+                        
+                }
+                else {
+                        
+                }
         }
         
-        void GradeFinal () {
+        void GradeFinal() {
                 
         }
         
