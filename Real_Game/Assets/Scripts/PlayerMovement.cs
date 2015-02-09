@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float moveSpeed;
 	private float maxSpeed = 5f;
 	public int deathCount;
-	public int killY = -2;
+	public int killY = -1.5;
 
 	public GameObject deathParticals;
 
@@ -46,17 +46,16 @@ public class PlayerMovement : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-		if (other.transform.tag == "Enemy")
-		{
-			deathCount +=1;
+		if (other.transform.tag == "Enemy") {
 			Die ();
 		}
 	}
 	
 
-	void Die()
-	{
+	void Die() {
+		deathCount += 1;
 		Instantiate(deathParticals, transform.position, Quaternion.identity);
 		transform.position = spawn;
 	}
+	
 }
