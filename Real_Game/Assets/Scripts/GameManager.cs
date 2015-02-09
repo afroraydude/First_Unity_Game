@@ -30,10 +30,11 @@ public class GameManager : MonoBehaviour {
 	Rect highScoreBox; 
 	GUISkin skin;
 	
-	// Stuff that deals with the ingame stopwatch, which is my answer to the score system.	
+	// Stuff that deals with the score system.	
 	public float startTime;
 	private string currentTime;
 	public string highTime;
+	public int deaths;
 	
 	//Load other classes
 	public PlayerMovement player;
@@ -100,8 +101,9 @@ public class GameManager : MonoBehaviour {
 			PlayerPrefs.SetString("Level" + currentLevel.ToString() + "Score", highTime);
 		}
 		
-		public int deaths = player.deathCount;
+		deaths = player.deathCount;
 		PlayerPrefs.SetInt("TempDeaths", deaths);
+		PlayerPrefs.SetFloat("TempExactScore", startTime);
 		
 		// if the level you are at is less than the numer of levels in the game + game end scene:
 		if (currentLevel < 5) {
@@ -130,6 +132,6 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	public void GetCurrentLevel() {
-		return currentLevel
+		return currentLevel;
 	}
 }
