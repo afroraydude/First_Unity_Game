@@ -10,28 +10,33 @@ using System.Collections;
 * Score Keeping
 * Score Saving
 */
+
+// TODO: UPDATE GUI
+
 public class GameManager : MonoBehaviour {
 	
 	// Score based stuff
 	public float highScore;
 	
 	// Level based stuff
-	public int currentLevel;
-	public int unlockedLevels;
-	public int LevelGradingID = 6;
-
+	int currentLevel;
+	int unlockedLevels;
+	int LevelGradingID = 6;
+	
 	// Things that deal with GUI
-	// why are there 2 of all of them? IDK
-	public Rect stopwatchRect;
-	public Rect stopwatchBoxRect;
-	public Rect highScoreRect;
-	public Rect highScoreBox; 
-	public GUISkin skin;
+	Rect stopwatchRect;
+	Rect stopwatchBoxRect;
+	Rect highScoreRect;
+	Rect highScoreBox; 
+	GUISkin skin;
 	
 	// Stuff that deals with the ingame stopwatch, which is my answer to the score system.	
 	public float startTime;
 	private string currentTime;
 	public string highTime;
+	
+	//Load other classes
+	public PlayerMovement player;
 	
 	// Once the level loads this happens
 	void Start() {
@@ -94,19 +99,25 @@ public class GameManager : MonoBehaviour {
 			highTime = string.Format ("{0:0.0}", highScore);
 			PlayerPrefs.SetString("Level" + currentLevel.ToString() + "Score", highTime);
 		}
-
-		// if the level you are at is less than the numer of levels in the game
+		
+		public int deaths = player.deathCount;
+		PlayerPrefs.setInt("TempDeaths", deaths);
+		
+		// if the level you are at is less than the numer of levels in the game + game end scene:
 		if (currentLevel < 5) {
 			// Load the LevelGrading Scene
 			Application.LoadLevel(LevelGradingID);
 		}
-
+		// In case it isn't, just to tell us we need to fix it
 		else {
 			print ("Please increase level amount.");
 		}
+		
+		PlayerPrefs.Save();
 	}
 	
-	// After LevelGrading is done
+	/** After LevelGrading is done, this happens so that we can load the level's scores 
+	*   Will be obsolete after the 4.6 update is done */
 	public void AfterGrading() {
 		// Go up a level
 		currentLevel +=1;
