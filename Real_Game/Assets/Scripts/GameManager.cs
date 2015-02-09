@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour {
 		}
 		
 		public int deaths = player.deathCount;
-		PlayerPrefs.setInt("TempDeaths", deaths);
+		PlayerPrefs.SetInt("TempDeaths", deaths);
 		
 		// if the level you are at is less than the numer of levels in the game + game end scene:
 		if (currentLevel < 5) {
