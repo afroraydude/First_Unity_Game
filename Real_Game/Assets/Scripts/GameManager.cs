@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 /**
 * Created By Afroraydude
@@ -19,17 +20,20 @@ public class GameManager : MonoBehaviour {
 	public float highScore;
 	
 	// Level based stuff
-	int currentLevel;
+	public int currentLevel;
 	int unlockedLevels;
 	int LevelGradingID = 6;
 	
 	// Things that deal with GUI
-	Rect stopwatchRect;
+	public Rect stopwatchRect;
 	Rect stopwatchBoxRect;
-	Rect highScoreRect;
-	Rect highScoreBox; 
-	GUISkin skin;
-	
+	Rect highScoreRect; // Delete
+	Rect highScoreBox; // Delete
+	public GUISkin skin;
+	public Text highscoreText;
+	public Text stopwatchText;
+
+
 	// Stuff that deals with the score system.	
 	public float startTime;
 	private string currentTime;
@@ -37,10 +41,19 @@ public class GameManager : MonoBehaviour {
 	public int deaths;
 	
 	//Load other classes
+	// Could also be: public PlayerMovement player = new PlayerMovement();
 	public PlayerMovement player;
+	public LevelGrading levelGrading;
 	
 	// Once the level loads this happens
 	void Start() {
+
+		highscoreText = highscoreText.GetComponent<Text>();
+		stopwatchText = stopwatchText.GetComponent<Text>();
+
+		levelGrading = levelGrading.GetComponent<LevelGrading>();
+		player = player.GetComponent<PlayerMovement>();
+
 		unlockedLevels = PlayerPrefs.GetInt("LevelsCompleted");
 		// DontDestroyOnLoad(gameObject);
 		// If the levels you unlocked is less than the level you are at
@@ -62,15 +75,20 @@ public class GameManager : MonoBehaviour {
 		startTime += Time.deltaTime;
 		//This puts it into a string so that it can be viewed on the GUI
 		currentTime = string.Format ("{0:0.0}", startTime);
+
+		stopwatchText.text = currentTime;
+		highscoreText.text = PlayerPrefs.GetString("Level" + currentLevel.ToString() + "Score");
 	}
 	
 	// GUI goes here
 	void OnGUI() {
+		/** Old/Just for refrence
 		GUI.skin = skin;
 		GUI.Box (stopwatchBoxRect, "");
 		GUI.Label(stopwatchRect, currentTime, skin.GetStyle ("Stopwatch"));
 		GUI.Label (highScoreRect, PlayerPrefs.GetString("Level" + currentLevel.ToString() + "Score"));
 		GUI.Box (highScoreBox, "");
+		*/
 	}
 	
 	public void MainMenuToLevelOne() {
@@ -107,8 +125,7 @@ public class GameManager : MonoBehaviour {
 		
 		// if the level you are at is less than the numer of levels in the game + game end scene:
 		if (currentLevel < 5) {
-			// Load the LevelGrading Scene
-			Application.LoadLevel(LevelGradingID);
+			levelGrading.startGrade = true;
 		}
 		// In case it isn't, just to tell us we need to fix it
 		else {
@@ -131,7 +148,7 @@ public class GameManager : MonoBehaviour {
 		currentLevel = 0;
 	}
 	
-	public void GetCurrentLevel() {
+	public int GetCurrentLevel() {
 		return currentLevel;
 	}
 }
