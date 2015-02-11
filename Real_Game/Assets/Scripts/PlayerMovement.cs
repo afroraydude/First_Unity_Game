@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
 	public GameManager manager;
+
 	public float moveSpeed;
 	private float maxSpeed = 5f;
 	public int deathCount;

@@ -24,10 +24,12 @@ public class GameManager : MonoBehaviour {
 	int unlockedLevels;
 	
 	// Things that deal with GUI
+	/** old code
 	public Rect stopwatchRect;
 	Rect stopwatchBoxRect;
 	Rect highScoreRect; // Delete
 	Rect highScoreBox; // Delete
+	*/
 	public GUISkin skin;
 	public Text highscoreText;
 	public Text stopwatchText;

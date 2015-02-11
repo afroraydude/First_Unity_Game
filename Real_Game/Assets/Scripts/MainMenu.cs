@@ -2,6 +2,12 @@
 using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary; 
 
+/** Class for the Main Menu
+ * Contains/Does the following:
+ * Manages GUI for the Main Menu
+ * Go to level 1
+ * That is about it
+*/
 public class MainMenu : MonoBehaviour 
 {
 

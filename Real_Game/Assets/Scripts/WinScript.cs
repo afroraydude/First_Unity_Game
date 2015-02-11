@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/** Class for last screen/End Screen
+ * Does the following
+ * Tells the player that they won
+ * GUI for going back to the begining
+ * GUI for exiting the game
+*/
 public class WinScript : MonoBehaviour {
 	public GUISkin skin;
 	public Rect winRect;
