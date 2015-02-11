@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 /**
@@ -17,6 +18,9 @@ public class LevelGrading : MonoBehaviour {
 	public Text time;
 	public Text final;
 	public Text death;
+	public Button endButton;
+	public Canvas canvas;
+	// public EventSystem eventSystem;
         
 	public float[] finalGrading = new float[4]; // This is the final score you recieve
 	public char finalScoreLetter; // 
@@ -37,13 +41,18 @@ public class LevelGrading : MonoBehaviour {
 	void Start() {
 		time = time.GetComponent<Text>();
 		death = death.GetComponent<Text>();
+		endButton = endButton.GetComponent<Button>();
 		final = final.GetComponent<Text>();
 		manager = manager.GetComponent<GameManager>();
+		canvas = canvas.GetComponent<Canvas>();
+		// eventSystem = eventSystem.GetComponent<EventSystem>();
 		time.enabled = false;
 		final.enabled = false;
 		death.enabled = false;
+		endButton.enabled = false;
 		deathsGiven = PlayerPrefs.GetInt("TempDeaths");
 		timeGiven = PlayerPrefs.GetFloat("TempExactScore");
+		canvas.enabled = false;
 	}
         
 	void Update() {
@@ -56,25 +65,33 @@ public class LevelGrading : MonoBehaviour {
                 // I might want to do the GUI
         }
         
-        void WhenStartGrade() {
-			GradeTime();
-			GradeDeaths();
-			GradeFinal();
-		}
+	void WhenStartGrade() {
+		GradeTime();
+		GradeDeaths();
+		GradeFinal();
+		death.text = dgs.ToString();
+		time.text = tgs.ToString();
+		final.text = finalScoreLetter.ToString();
+		time.enabled = true;
+		canvas.enabled = true;
+		final.enabled = true;
+		death.enabled = true;
+		endButton.enabled = true;
+	}
         
-        void GradeTime() {
+	void GradeTime() {
                 // For A
-                if(timeGiven < timeGrading[1]) {
+		if(timeGiven < timeGrading[1]) {
 			tgs = 5;
-                }
+		}
                 // For B
-                else if(timeGiven < timeGrading[2]) {
+		else if(timeGiven < timeGrading[2]) {
 			tgs = 4;
-                }
+		}
                 // For C
-                else if(timeGiven < timeGrading[3]) {
+		else if(timeGiven < timeGrading[3]) {
 			tgs = 3;
-                }
+		}
                 // For D
                 else if (timeGiven < timeGrading[4]) {
 			tgs = 2;
@@ -129,6 +146,9 @@ public class LevelGrading : MonoBehaviour {
                         finalScoreLetter = 'F';
                 }
         }
-        
+
+	public void PlayerExit() {
+		manager.AfterGrading();
+	}   
 }
 

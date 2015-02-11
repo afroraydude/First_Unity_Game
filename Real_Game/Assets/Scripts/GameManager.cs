@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour {
 	// Level based stuff
 	public int currentLevel;
 	int unlockedLevels;
-	int LevelGradingID = 6;
 	
 	// Things that deal with GUI
 	public Rect stopwatchRect;
@@ -146,9 +145,5 @@ public class GameManager : MonoBehaviour {
 	// Pretty straightforward
 	public void StartGame() {
 		currentLevel = 0;
-	}
-	
-	public int GetCurrentLevel() {
-		return currentLevel;
 	}
 }
