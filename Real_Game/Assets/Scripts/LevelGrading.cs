@@ -46,10 +46,6 @@ public class LevelGrading : MonoBehaviour {
 		manager = manager.GetComponent<GameManager>();
 		canvas = canvas.GetComponent<Canvas>();
 		// eventSystem = eventSystem.GetComponent<EventSystem>();
-		time.enabled = false;
-		final.enabled = false;
-		death.enabled = false;
-		endButton.enabled = false;
 		deathsGiven = PlayerPrefs.GetInt("TempDeaths");
 		timeGiven = PlayerPrefs.GetFloat("TempExactScore");
 		canvas.enabled = false;
@@ -72,11 +68,7 @@ public class LevelGrading : MonoBehaviour {
 		death.text = dgs.ToString();
 		time.text = tgs.ToString();
 		final.text = finalScoreLetter.ToString();
-		time.enabled = true;
 		canvas.enabled = true;
-		final.enabled = true;
-		death.enabled = true;
-		endButton.enabled = true;
 	}
         
 	void GradeTime() {

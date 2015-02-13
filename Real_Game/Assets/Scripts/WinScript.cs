@@ -8,14 +8,14 @@ using System.Collections;
  * GUI for exiting the game
 */
 public class WinScript : MonoBehaviour {
+	/**
 	public GUISkin skin;
 	public Rect winRect;
-	protected string winString = "Game over, you win!";
+	protected string winString = "Game over, you win!"; */
 
 	public GameManager manager;
 	// Mostly only used to read the components in 
-	void Start () 
-	{
+	void Start () {
 		manager = manager.GetComponent<GameManager>();
 		//Destroy(gameObject);
 	}
@@ -25,8 +25,13 @@ public class WinScript : MonoBehaviour {
 		
 	}
 
-	void OnGUI ()
-	{
+	public void EndGame() {
+		print ("Button 'Quit' has been pressed!");
+		Application.Quit ();
+	}
+
+	void OnGUI () {
+		/** 
 		GUI.skin = skin;
 		GUI.Label (new Rect (10,10,440,45), winString);
 		if (GUI.Button(new Rect (10,205,100,45), "Quit"))
@@ -38,7 +43,7 @@ public class WinScript : MonoBehaviour {
 		{
 			print ("Going back!");
 			manager.BackToMainMenu();
-		}
+		} */
 	}
 	
 }

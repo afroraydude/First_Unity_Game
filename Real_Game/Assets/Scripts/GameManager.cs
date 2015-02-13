@@ -97,9 +97,8 @@ public class GameManager : MonoBehaviour {
 		currentLevel = 1;
 		/** This might not be required anymore:
 		PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
-		PlayerPrefs.Save();
+		PlayerPrefs.Save(); */
 		Application.LoadLevel(currentLevel);
-		*/
 	}
 
 	public void BackToMainMenu() {
@@ -140,6 +139,7 @@ public class GameManager : MonoBehaviour {
 	*   Will be obsolete after the 4.6 update is done */
 	public void AfterGrading() {
 		// Go up a level
+		print ("Button press worked");
 		currentLevel +=1;
 		Application.LoadLevel(currentLevel);
 	}
