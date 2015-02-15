@@ -147,6 +147,7 @@ public class GameManager : MonoBehaviour {
 		clevel = currentLevel.ToString();
 		Debug.Log(clevel);
 		// Go up a level
+		clevel = currentLevel.ToString ();
 		Debug.Log(clevel);
 		Application.LoadLevel("Level" + clevel);
 	}
