@@ -50,7 +50,6 @@ public class GameManager : MonoBehaviour {
 	
 	// Once the level loads this happens
 	void Start() {
-
 		highscoreText = highscoreText.GetComponent<Text>();
 		stopwatchText = stopwatchText.GetComponent<Text>();
 
@@ -60,7 +59,7 @@ public class GameManager : MonoBehaviour {
 		unlockedLevels = PlayerPrefs.GetInt("LevelsCompleted");
 		// DontDestroyOnLoad(gameObject);
 
-
+		currentLevel = Application.loadedLevel;
 
 		// If the levels you unlocked is less than the level you are at
 		if (unlockedLevels < currentLevel) {
@@ -131,7 +130,6 @@ public class GameManager : MonoBehaviour {
 		// if the level you are at is less than the numer of levels in the game + game end scene:
 		if (currentLevel < 100) {
 			levelGrading.startGrade = true;
-			currentLevel +=1;
 		}
 		// In case it isn't, just to tell us we need to fix it
 		else {
@@ -144,12 +142,8 @@ public class GameManager : MonoBehaviour {
 	/** After LevelGrading is done, this happens so that we can load the level's scores 
 	*   Will be obsolete after the 4.6 update is done */
 	public void AfterGrading() {
-		clevel = currentLevel.ToString();
-		Debug.Log(clevel);
-		// Go up a level
-		clevel = currentLevel.ToString ();
-		Debug.Log(clevel);
-		Application.LoadLevel("Level" + clevel);
+		currentLevel += 1;
+		Application.LoadLevel(currentLevel);
 	}
 	
 	// Pretty straightforward
