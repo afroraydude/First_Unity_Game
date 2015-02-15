@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
 	public float highScore;
 	
 	// Level based stuff
-	public int currentLevel;
+	int currentLevel;
 	int unlockedLevels;
 	
 	// Things that deal with GUI
@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour {
 	private string currentTime;
 	public string highTime;
 	public int deaths;
+
+	string clevel;
 	
 	//Load other classes
 	// Could also be: public PlayerMovement player = new PlayerMovement();
@@ -57,6 +59,9 @@ public class GameManager : MonoBehaviour {
 
 		unlockedLevels = PlayerPrefs.GetInt("LevelsCompleted");
 		// DontDestroyOnLoad(gameObject);
+
+
+
 		// If the levels you unlocked is less than the level you are at
 		if (unlockedLevels < currentLevel) {
 			// make it the same
@@ -124,8 +129,9 @@ public class GameManager : MonoBehaviour {
 		PlayerPrefs.SetFloat("TempExactScore", startTime);
 		
 		// if the level you are at is less than the numer of levels in the game + game end scene:
-		if (currentLevel < 5) {
+		if (currentLevel < 100) {
 			levelGrading.startGrade = true;
+			currentLevel +=1;
 		}
 		// In case it isn't, just to tell us we need to fix it
 		else {
@@ -138,14 +144,20 @@ public class GameManager : MonoBehaviour {
 	/** After LevelGrading is done, this happens so that we can load the level's scores 
 	*   Will be obsolete after the 4.6 update is done */
 	public void AfterGrading() {
+		clevel = currentLevel.ToString();
+		Debug.Log(clevel);
 		// Go up a level
-		print ("Button press worked");
-		currentLevel +=1;
-		Application.LoadLevel(currentLevel);
+		Debug.Log(clevel);
+		Application.LoadLevel("Level" + clevel);
 	}
 	
 	// Pretty straightforward
 	public void StartGame() {
 		currentLevel = 0;
 	}
+
+	/**
+	public int GetCurrentLevel() {
+		return currentLevel;
+	} */
 }

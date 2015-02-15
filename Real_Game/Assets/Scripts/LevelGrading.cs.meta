@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: 3a194e12da664a1469ff8320effe40bb
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - manager: {instanceID: 0}
+  - time: {fileID: 11483550, guid: b6e7c1cbc194f104c82bc5eb4dbb196b, type: 2}
+  - final: {fileID: 11483560, guid: b6e7c1cbc194f104c82bc5eb4dbb196b, type: 2}
+  - death: {fileID: 11483548, guid: b6e7c1cbc194f104c82bc5eb4dbb196b, type: 2}
+  - canvas: {fileID: 22383560, guid: b6e7c1cbc194f104c82bc5eb4dbb196b, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

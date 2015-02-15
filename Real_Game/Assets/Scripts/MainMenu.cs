@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Runtime.Serialization.Formatters.Binary; 
 
 /** Class for the Main Menu
  * Contains/Does the following:
@@ -14,7 +13,6 @@ public class MainMenu : MonoBehaviour {
 	// Mostly only used to read the components in 
 	void Start() {
 		manager = manager.GetComponent<GameManager>();
-		manager.StartGame();
 		//Destroy(gameObject);
 	}
 
@@ -26,4 +24,8 @@ public class MainMenu : MonoBehaviour {
 		print ("Button 'Quit' has been pressed!");
 		Application.Quit ();
 	}
+	public void UpdateGame() {
+		Application.OpenURL("https://github.com/afroraydude/First_Unity_Game/releases/latest");
+	}
+
 }
