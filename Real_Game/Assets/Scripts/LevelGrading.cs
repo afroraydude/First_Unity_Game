@@ -66,6 +66,7 @@ public class LevelGrading : MonoBehaviour {
 		death.text = "Death Score: " + deathGradingLetter.ToString();
 		time.text = "Time Score: " + timeGradingLetter.ToString();
 		final.text = "Final Score: " + finalScoreLetter.ToString();
+
 	}
         
 	void GradeTime() {
@@ -122,27 +123,27 @@ public class LevelGrading : MonoBehaviour {
 		}
 	}
         
-        void GradeFinal() {
-                fgs = (tgs + dgs) / 2;
+	void GradeFinal() {
+		fgs = (tgs + dgs) / 2;
                 // For A
-                if(fgs > 4) {
-                        finalScoreLetter = 'A';
-                }
-                // For B
-                else if(fgs > 3) {
-                        finalScoreLetter = 'B';
+		if(fgs > 4) {
+			finalScoreLetter = 'A';
+		}
+		// For B
+		else if(fgs > 3) {
+			finalScoreLetter = 'B';
                 }
                 // For C
-                else if(fgs > 2) {
-                        finalScoreLetter = 'C';
-                }
+		else if(fgs > 2) {
+			finalScoreLetter = 'C';
+		}
                 // For D
-                else if (fgs > 1) {
-                        finalScoreLetter = 'D';
-                }
+		else if (fgs > 1) {
+			finalScoreLetter = 'D';
+		}
                 else {
-                        finalScoreLetter = 'F';
-                }
-        }
+			finalScoreLetter = 'F';
+		}
+	}
 }
 

@@ -16,9 +16,6 @@ public class Logger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-		/**
-		frameRate = 1 / Time.deltaTime;
-		Debug.Log(frameRate.ToString()); */
-		//Thread.Sleep (5000);
+
 	}
 }
