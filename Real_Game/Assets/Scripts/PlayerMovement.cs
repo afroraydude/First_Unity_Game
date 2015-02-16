@@ -43,6 +43,10 @@ public class PlayerMovement : MonoBehaviour {
 			manager.CompleteLevel();
 
 		}
+		if (other.transform.tag == "Invisible") {
+			Die();
+		}
+
 	}
 
 	void OnCollisionEnter(Collision other)
