@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour {
 	// Level based stuff
 	int currentLevel;
 	int unlockedLevels;
-	
+
+	public Canvas mobileControls;
 	// Things that deal with GUI
 	/** old code
 	public Rect stopwatchRect;
@@ -57,7 +58,13 @@ public class GameManager : MonoBehaviour {
 		player = player.GetComponent<PlayerMovement>();
 
 		unlockedLevels = PlayerPrefs.GetInt("LevelsCompleted");
+
+		mobileControls = mobileControls.GetComponent<Canvas>();
 		// DontDestroyOnLoad(gameObject);
+
+		if(!Application.isMobilePlatform) {
+			mobileControls.enabled = false;
+		}
 
 		currentLevel = Application.loadedLevel;
 
