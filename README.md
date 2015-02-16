@@ -20,12 +20,12 @@ Tune into here for more news 'n' stuff.
 
 Things to do
 
-[ ] Flash Version
-[ ] GUI Images
-[ ] Options menu
-[ ] Add Level 5
-[ ] Add Level 6
-[ ] Add Level 7
-[ ] Add Level 8
-[ ] Add Level 9
-[ ] Add Level 10
+- [ ] Flash Version
+- [ ] GUI Images
+- [ ] Options menu
+- [ ] Add Level 5
+- [ ] Add Level 6
+- [ ] Add Level 7
+- [ ] Add Level 8
+- [ ] Add Level 9
+- [ ] Add Level 10
