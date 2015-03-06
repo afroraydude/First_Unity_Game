@@ -26,9 +26,9 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate () 
 	{
 		input = new Vector3 (Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-		if(rigidbody.velocity.magnitude < maxSpeed) 
+		if(GetComponent<Rigidbody>().velocity.magnitude < maxSpeed) 
 		{
-			rigidbody.AddForce(input * moveSpeed);
+			GetComponent<Rigidbody>().AddForce(input * moveSpeed);
 		}
 		if (transform.position.y <= killY)
 		{
