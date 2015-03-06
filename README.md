@@ -22,7 +22,7 @@ Things to do
 
 - [ ] Flash Version
 - [ ] GUI Images
-- [ ] Options menu
+- [X] Options menu
 - [ ] Add Level 5
 - [ ] Add Level 6
 - [ ] Add Level 7
