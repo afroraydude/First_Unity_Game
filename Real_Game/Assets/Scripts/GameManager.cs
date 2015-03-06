@@ -69,6 +69,8 @@ public class GameManager : MonoBehaviour {
 		currentLevel = Application.loadedLevel;
 
 		// If the levels you unlocked is less than the level you are at
+		// Not useful yet
+		/**
 		if (unlockedLevels < currentLevel) {
 			// make it the same
 			PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
@@ -79,6 +81,7 @@ public class GameManager : MonoBehaviour {
 		else {
 			// do nothing
 		}
+		*/
 	}
 	
 	// This is ran every tick
@@ -102,7 +105,7 @@ public class GameManager : MonoBehaviour {
 		GUI.Box (highScoreBox, "");
 		*/
 	}
-	
+	/** Starts the game */
 	public void MainMenuToLevelOne() {
 		// To go to Level 1 
 		currentLevel = 1;

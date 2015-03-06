@@ -9,11 +9,21 @@ using System.Collections;
 */
 public class MainMenu : MonoBehaviour {
 	public GameManager manager;
-	
-	// Mostly only used to read the components in 
-	void Start() {
-		manager = manager.GetComponent<GameManager>();
-		//Destroy(gameObject);
+
+	void Awake () {
+		if(PlayerPrefs.HasKey("ResHeight")){
+			Screen.SetResolution(PlayerPrefs.GetInt ("ResWidth"), PlayerPrefs.GetInt ("ResHeight"), false);
+			if(PlayerPrefs.GetInt("GoFullscreen") == 1) {
+				Screen.fullScreen = true;
+			}
+			else {
+				Screen.fullScreen = false;
+			}
+		}
+	}
+
+	void Start () {
+		manager = manager.GetComponent<GameManager> ();
 	}
 
 	public void StartGame() {
@@ -26,6 +36,10 @@ public class MainMenu : MonoBehaviour {
 	}
 	public void UpdateGame() {
 		Application.OpenURL("https://github.com/afroraydude/First_Unity_Game/releases/latest");
+	}
+
+	public void ToOptionsMenu() {
+		Application.LoadLevel ("Options");
 	}
 
 }
