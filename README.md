@@ -20,7 +20,7 @@ Tune into here for more news 'n' stuff.
 
 Things to do
 
-- ~~[ ] Flash Version~~
+- [ ] ~~Flash Version~~
 - [ ] GUI Images
 - [X] Options menu
 - [ ] Add Level 5
