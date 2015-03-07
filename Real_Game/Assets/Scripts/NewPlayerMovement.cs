@@ -5,10 +5,16 @@ public class NewPlayerMovement : MonoBehaviour {
 
 	public GameManager manager;
 
+	//public Animator animator;
+	public Rigidbody rigid;
+	public string walkingStateName = "walking";
+
 	public float moveSpeed;
 	private float maxSpeed = 5f;
 	public int deathCount;
 	public float killY = -1.5f;
+	public float theExplosionForce = 1f;
+	public float theExplosionRadius = 1f;
 
 	public GameObject deathParticals;
 
@@ -18,6 +24,8 @@ public class NewPlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		rigid = rigid.GetComponent<Rigidbody> ();
+		//animator = animator.GetComponent<Animator>();
 		spawn = transform.position;
 		manager = manager.GetComponent<GameManager>();
 	}
@@ -26,9 +34,10 @@ public class NewPlayerMovement : MonoBehaviour {
 	void FixedUpdate () 
 	{
 		input = new Vector3 (Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-		if(GetComponent<Rigidbody>().velocity.magnitude < maxSpeed) 
+		if(rigid.velocity.magnitude < maxSpeed) 
 		{
-			GetComponent<Rigidbody>().AddForce(input * moveSpeed);
+			rigid.AddForce(input * moveSpeed);
+			//animator.Play(walkingStateName);
 		}
 		if (transform.position.y <= killY)
 		{
@@ -59,6 +68,7 @@ public class NewPlayerMovement : MonoBehaviour {
 
 	void Die() {
 		deathCount += 1;
+		rigid.AddExplosionForce (theExplosionForce, transform.position, theExplosionRadius);
 		Instantiate(deathParticals, transform.position, Quaternion.identity);
 		transform.position = spawn;
 	}
