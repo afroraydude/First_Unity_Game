@@ -42,4 +42,8 @@ public class MainMenu : MonoBehaviour {
 		Application.LoadLevel ("Options");
 	}
 
+	public void ToTesing() {
+		Application.LoadLevel ("Animation");
+	}
+
 }
