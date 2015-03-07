@@ -1,6 +1,6 @@
 //Maya ASCII 2015 scene
 //Name: newplayerwithjoints.ma
-//Last modified: Fri, Mar 06, 2015 08:22:10 PM
+//Last modified: Fri, Mar 06, 2015 09:43:59 PM
 //Codeset: 1252
 requires maya "2015";
 currentUnit -l centimeter -a degree -t film;
@@ -11,13 +11,13 @@ fileInfo "cutIdentifier" "201402282131-909040";
 fileInfo "osv" "Microsoft Windows 8 Home Premium Edition, 64-bit  (Build 9200)\n";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -7.324478656909287 0.70992934157560295 9.7199114728652933 ;
+	setAttr ".t" -type "double3" -2.9509615611167028 0.28602366069068885 3.9160582585375976 ;
 	setAttr ".r" -type "double3" -3.338352732065466 -2916.9999999995835 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 12.191335706387896;
+	setAttr ".coi" 4.91177116261618;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";

@@ -43,6 +43,7 @@ public class NewPlayerMovement : MonoBehaviour {
 		{
 			Die ();
 		}
+		rigid.AddExplosionForce (theExplosionForce, transform.position, theExplosionRadius);
 	}
 
 	void OnTriggerEnter(Collider other)

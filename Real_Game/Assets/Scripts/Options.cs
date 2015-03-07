@@ -56,8 +56,10 @@ public class Options : MonoBehaviour {
 		}
 
 		PlayerPrefs.SetInt ("ResHeight", resHeight [screenResInt]);
-		PlayerPrefs.SetInt("ResWidth", resHeight[screenResInt]);
+		PlayerPrefs.SetInt("ResWidth", resWidth[screenResInt]);
 		PlayerPrefs.SetString ("ResText", resText.text);
+		//PlayerSettings.defaultScreenWidth.Equals(resWidth[screenResInt]);
+		//PlayerSettings.defaultScreenHeight.Equals(resHeight[screenResInt]);
 		PlayerPrefs.SetFloat ("ResSlider", screenRes);
 		PlayerPrefs.Save ();
 		print ("Settings applied and saved");
