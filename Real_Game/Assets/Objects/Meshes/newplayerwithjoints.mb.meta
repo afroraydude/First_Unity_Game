@@ -1,38 +1,22 @@
 fileFormatVersion: 2
-guid: 1406be82c162a0b48aac698fd45076e9
-timeCreated: 1425689054
+guid: 41fb89f95b922d3459b599d4a74e16be
+timeCreated: 1425933385
 licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: joint1
-    100002: joint2
-    100004: joint3
-    100006: joint4
-    100008: joint5
-    100010: joint6
-    100012: joint7
-    100014: joint8
-    100016: //RootNode
-    100018: pCube1
-    100020: pCube2
-    100022: pCube3
-    100024: pCube4
-    100026: pCube5
-    400000: joint1
-    400002: joint2
-    400004: joint3
-    400006: joint4
-    400008: joint5
-    400010: joint6
-    400012: joint7
-    400014: joint8
-    400016: //RootNode
-    400018: pCube1
-    400020: pCube2
-    400022: pCube3
-    400024: pCube4
-    400026: pCube5
+    100000: //RootNode
+    100002: pCube1
+    100004: pCube2
+    100006: pCube3
+    100008: pCube4
+    100010: pCube5
+    400000: //RootNode
+    400002: pCube1
+    400004: pCube2
+    400006: pCube3
+    400008: pCube4
+    400010: pCube5
     2300000: pCube1
     2300002: pCube2
     2300004: pCube3
@@ -48,18 +32,7 @@ ModelImporter:
     4300004: pCube3
     4300006: pCube4
     4300008: pCube5
-    6400000: pCube1
-    6400002: pCube2
-    6400004: pCube3
-    6400006: pCube4
-    6400008: pCube5
-    7400000: Take 001
     9500000: //RootNode
-    13700000: pCube1
-    13700002: pCube2
-    13700004: pCube3
-    13700006: pCube4
-    13700008: pCube5
   materials:
     importMaterials: 1
     materialName: 0
@@ -81,10 +54,10 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -97,7 +70,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
