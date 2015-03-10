@@ -1,36 +1,36 @@
 fileFormatVersion: 2
-guid: 41fb89f95b922d3459b599d4a74e16be
-timeCreated: 1425933385
+guid: 07fe1438291ce9f4dbcb6e5c5929aced
+timeCreated: 1426031935
 licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: pCube1
-    100004: pCube2
-    100006: pCube3
-    100008: pCube4
-    100010: pCube5
-    100012: Character1_Reference
-    100014: joint2
-    100016: joint3
-    100018: joint4
-    100020: joint5
-    100022: nurbsCube1
-    100024: root
-    400000: //RootNode
-    400002: pCube1
-    400004: pCube2
-    400006: pCube3
-    400008: pCube4
-    400010: pCube5
-    400012: Character1_Reference
-    400014: joint2
-    400016: joint3
-    400018: joint4
-    400020: joint5
-    400022: nurbsCube1
-    400024: root
+    100000: Character1_Reference
+    100002: joint1
+    100004: joint2
+    100006: joint3
+    100008: joint4
+    100010: joint5
+    100012: //RootNode
+    100014: nurbsCube1
+    100016: pCube1
+    100018: pCube2
+    100020: pCube3
+    100022: pCube4
+    100024: pCube5
+    400000: Character1_Reference
+    400002: joint1
+    400004: joint2
+    400006: joint3
+    400008: joint4
+    400010: joint5
+    400012: //RootNode
+    400014: nurbsCube1
+    400016: pCube1
+    400018: pCube2
+    400020: pCube3
+    400022: pCube4
+    400024: pCube5
     2300000: pCube1
     2300002: pCube2
     2300004: pCube3
@@ -47,11 +47,6 @@ ModelImporter:
     4300006: pCube4
     4300008: pCube5
     9500000: //RootNode
-    13700000: pCube1
-    13700002: pCube2
-    13700004: pCube3
-    13700006: pCube4
-    13700008: pCube5
   materials:
     importMaterials: 1
     materialName: 0

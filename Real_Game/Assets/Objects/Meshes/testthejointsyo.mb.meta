@@ -1,46 +1,36 @@
 fileFormatVersion: 2
-guid: 41fb89f95b922d3459b599d4a74e16be
-timeCreated: 1425933385
+guid: 7d8059523f4de094d929773684642538
+timeCreated: 1426031939
 licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: pCube1
-    100004: pCube2
-    100006: pCube3
-    100008: pCube4
-    100010: pCube5
-    100012: Character1_Reference
-    100014: joint2
-    100016: joint3
-    100018: joint4
-    100020: joint5
-    100022: nurbsCube1
-    100024: root
-    400000: //RootNode
-    400002: pCube1
-    400004: pCube2
-    400006: pCube3
-    400008: pCube4
-    400010: pCube5
-    400012: Character1_Reference
-    400014: joint2
-    400016: joint3
-    400018: joint4
-    400020: joint5
-    400022: nurbsCube1
-    400024: root
-    2300000: pCube1
-    2300002: pCube2
-    2300004: pCube3
-    2300006: pCube4
-    2300008: pCube5
-    3300000: pCube1
-    3300002: pCube2
-    3300004: pCube3
-    3300006: pCube4
-    3300008: pCube5
+    100000: Character1_Reference
+    100002: joint1
+    100004: joint2
+    100006: joint3
+    100008: joint4
+    100010: joint5
+    100012: nurbsCube1
+    100014: pCube1
+    100016: pCube2
+    100018: pCube3
+    100020: pCube4
+    100022: pCube5
+    100024: //RootNode
+    400000: Character1_Reference
+    400002: joint1
+    400004: joint2
+    400006: joint3
+    400008: joint4
+    400010: joint5
+    400012: nurbsCube1
+    400014: pCube1
+    400016: pCube2
+    400018: pCube3
+    400020: pCube4
+    400022: pCube5
+    400024: //RootNode
     4300000: pCube1
     4300002: pCube2
     4300004: pCube3
