@@ -1,8 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class NewPlayerMovement : MonoBehaviour {
-
 	public GameManager manager;
 
 	//public Animator animator;
@@ -13,8 +12,6 @@ public class NewPlayerMovement : MonoBehaviour {
 	private float maxSpeed = 5f;
 	public int deathCount;
 	public float killY = -1.5f;
-	public float theExplosionForce = 1f;
-	public float theExplosionRadius = 1f;
 
 	public GameObject deathParticals;
 
@@ -22,18 +19,33 @@ public class NewPlayerMovement : MonoBehaviour {
 	private Vector3 spawn;
 
 	// Use this for initialization
-	void Start () 
-	{
+	void Start () {
 		rigid = rigid.GetComponent<Rigidbody> ();
 		//animator = animator.GetComponent<Animator>();
 		spawn = transform.position;
 		manager = manager.GetComponent<GameManager>();
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		input = new Vector3 (Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+		input = new Vector3 (0, 0, 0);
+		if (Input.GetButtonDown("Up") && Input.GetButtonUp("Down")) {
+			input.z = 1f;
+		}
+		else if (Input.GetButtonDown("Down") && Input.GetButtonUp("Up")) {
+			input.z = -1f;
+		}
+		else if (Input.GetButtonDown("Left") && Input.GetButtonUp("Right")) {
+			input.x = -1f;
+		}
+		else if (Input.GetButtonDown("Right") && Input.GetButtonUp("Left")) {
+			input.x = 1f;
+		}
+		startMoving ();
+	}
+
+	void startMoving() {
 		if(rigid.velocity.magnitude < maxSpeed) 
 		{
 			rigid.AddForce(input * moveSpeed);
@@ -43,7 +55,6 @@ public class NewPlayerMovement : MonoBehaviour {
 		{
 			Die ();
 		}
-		rigid.AddExplosionForce (theExplosionForce, transform.position, theExplosionRadius);
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -69,7 +80,6 @@ public class NewPlayerMovement : MonoBehaviour {
 
 	void Die() {
 		deathCount += 1;
-		rigid.AddExplosionForce (theExplosionForce, transform.position, theExplosionRadius);
 		Instantiate(deathParticals, transform.position, Quaternion.identity);
 		transform.position = spawn;
 	}

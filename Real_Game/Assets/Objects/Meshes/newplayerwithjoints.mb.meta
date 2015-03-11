@@ -18,6 +18,10 @@ ModelImporter:
     100020: joint5
     100022: nurbsCube1
     100024: root
+    100026: larm
+    100028: lleg
+    100030: rarm
+    100032: rleg
     400000: //RootNode
     400002: pCube1
     400004: pCube2
@@ -31,6 +35,10 @@ ModelImporter:
     400020: joint5
     400022: nurbsCube1
     400024: root
+    400026: larm
+    400028: lleg
+    400030: rarm
+    400032: rleg
     2300000: pCube1
     2300002: pCube2
     2300004: pCube3
@@ -73,10 +81,10 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -90,7 +98,7 @@ ModelImporter:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -103,7 +111,7 @@ ModelImporter:
     armStretch: .0500000007
     legStretch: .0500000007
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: root
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   additionalBone: 0
