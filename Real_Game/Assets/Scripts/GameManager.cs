@@ -153,6 +153,8 @@ public class GameManager : MonoBehaviour {
 	*   Will be obsolete after the 4.6 update is done */
 	public void AfterGrading() {
 		currentLevel += 1;
+		unlockedLevels = currentLevel;
+		PlayerPrefs.SetInt ("unlockedLevels", unlockedLevels);
 		Application.LoadLevel(currentLevel);
 	}
 	

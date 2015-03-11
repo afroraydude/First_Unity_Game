@@ -33,23 +33,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		input = new Vector3 (0, 0, 0);
-		if (Input.GetButtonDown("Up") && Input.GetButtonUp("Down")) {
-			input.z = (float)up;
-		}
-		else if (Input.GetButtonDown("Down") && Input.GetButtonUp("Up")) {
-			input.z = (float)down;
-		}
-		else if (Input.GetButtonDown("Left") && Input.GetButtonUp("Right")) {
-			input.x = (float)left;
-		}
-		else if (Input.GetButtonDown("Right") && Input.GetButtonUp("Left")) {
-			input.x = (float)right;
-		}
-		startMoving ();
-	}
-	
-	void startMoving() {
+		input = new Vector3 (Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 		if(rigid.velocity.magnitude < maxSpeed) 
 		{
 			rigid.AddForce(input * moveSpeed);
