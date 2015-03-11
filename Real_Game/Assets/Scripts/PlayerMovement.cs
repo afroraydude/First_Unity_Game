@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour {
 	private float maxSpeed = 5f;
 	public int deathCount;
 	public float killY = -1.5f;
+	public int up = 1;
+	public int down = -1;
+	public int left = -1;
+	public int right = 1;
 	
 	public GameObject deathParticals;
 	
@@ -31,16 +35,16 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		input = new Vector3 (0, 0, 0);
 		if (Input.GetButtonDown("Up") && Input.GetButtonUp("Down")) {
-			input.z = 1f;
+			input.z = (float)up;
 		}
 		else if (Input.GetButtonDown("Down") && Input.GetButtonUp("Up")) {
-			input.z = -1f;
+			input.z = (float)down;
 		}
 		else if (Input.GetButtonDown("Left") && Input.GetButtonUp("Right")) {
-			input.x = -1f;
+			input.x = (float)left;
 		}
 		else if (Input.GetButtonDown("Right") && Input.GetButtonUp("Left")) {
-			input.x = 1f;
+			input.x = (float)right;
 		}
 		startMoving ();
 	}
