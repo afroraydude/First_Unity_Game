@@ -7,22 +7,58 @@
   </info>
   <level id="1">
     <time>
-      
+      <a></a>
+      <b></b>
+      <c></c>
+      <d></d>
     </time>
+    <death>
+      <a></a>
+      <b></b>
+      <c></c>
+      <d></d>
+    </death>
   </level>
   <level id="2">
     <time>
-      
+      <a></a>
+      <b></b>
+      <c></c>
+      <d></d>
     </time>
+    <death>
+      <a></a>
+      <b></b>
+      <c></c>
+      <d></d>
+    </death>
   </level>
   <level id="3">
     <time>
-      
+      <a></a>
+      <b></b>
+      <c></c>
+      <d></d>
     </time>
+    <death>
+      <a></a>
+      <b></b>
+      <c></c>
+      <d></d>
+    </death>
   </level>
   <level id="4">
     <time>
-      
+      <a></a>
+      <b></b>
+      <c></c>
+      <d></d>
     </time>
+    <death>
+      <a></a>
+      <b></b>
+      <c></c>
+      <d></d>
+    </death>
   </level>
 </game>
