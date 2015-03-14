@@ -71,5 +71,7 @@ public class NewPlayerMovement : MonoBehaviour {
 		Instantiate(deathParticals, transform.position, Quaternion.identity);
 		transform.position = spawn;
 	}
-	
+	public void Leave() {
+		Application.LoadLevel (0);
+	}
 }
