@@ -10,19 +10,13 @@ public class WebFileLoader : MonoBehaviour {
 	void Start () {
 
 	}
-	/**
-	 * unnessesary
-	public void startReadingURL() {
-		StartCoroutine(GetURL())
-	}
-	*/
 
 	// Update is called once per frame
 	void Update () {
 	
 	}
 
-	IEnumerator GetURL (string url) {
+	public IEnumerator GetURL (string url) {
 		www = new WWW (url);
 		yield return www;
 	}
