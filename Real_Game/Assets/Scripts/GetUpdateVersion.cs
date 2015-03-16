@@ -31,8 +31,8 @@ public class GetUpdateVersion : MonoBehaviour {
 		StopCoroutine (GetVersion ());
 	}
 
-	IEnumerator GetUpdateData (string url) {
-		update = new WWW (url);
+	IEnumerator GetUpdateData () {
+		update = new WWW (updateURL);
 		yield return update;
 		gotVersionText = updateWWW.text.ToString();
 		print (gotVersionText);
