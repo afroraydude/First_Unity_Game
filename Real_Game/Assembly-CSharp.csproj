@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Destroy.cs" />
      <Compile Include="Assets\Scripts\ExampleClass.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GetUpdateVersion.cs" />
      <Compile Include="Assets\Scripts\KeyBinder.cs" />
      <Compile Include="Assets\Scripts\LevelGrading.cs" />
      <Compile Include="Assets\Scripts\Logger.cs" />
@@ -58,7 +59,6 @@
      <Compile Include="Assets\Scripts\Options.cs" />
      <Compile Include="Assets\Scripts\Patrol.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\UpdateChecker.cs" />
      <Compile Include="Assets\Scripts\WebFileLoader.cs" />
      <Compile Include="Assets\Scripts\WinScript.cs" />
      <Compile Include="Assets\Scripts\XMLParser.cs" />

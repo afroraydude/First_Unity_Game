@@ -23,18 +23,18 @@ public class GetUpdateVersion : MonoBehaviour {
       		//The advantage to the string version is that you can call stop coroutine:
       		StopCoroutine("Do");
 		*/
+		StartCoroutine (GetUpdateData ());
 	}
 
 	// Update is called once per frame
 	void Update () {
-		StartCoroutine (GetVersion ());
-		StopCoroutine (GetVersion ());
+
 	}
 
 	IEnumerator GetUpdateData () {
 		update = new WWW (updateURL);
 		yield return update;
-		gotVersionText = updateWWW.text.ToString();
+		gotVersionText = update.text.ToString();
 		print (gotVersionText);
 		gotVersion = float.Parse (gotVersionText);
 		print (gotVersion);
