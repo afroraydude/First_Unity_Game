@@ -16,11 +16,14 @@ public class MainMenu : MonoBehaviour {
 	public Button updateButton;
 	public byte[] versionWWWByte;
 	public Text updateButtonText;
+	public Button startButton;
 	public string updateURL;
+	public Button foolButton;
 	WWW updateWWW;
 	public float version;
 	public string versionText;
 	public float gotVersion;
+	public XMLParser xml;
 
 	void Awake () {
 		//ping = new Ping("8.8.8.8");
@@ -33,11 +36,16 @@ public class MainMenu : MonoBehaviour {
 				Screen.fullScreen = false;
 			}
 		}
+		xml = xml.GetComponent<XMLParser> ();
+		startButton = startButton.GetComponent<Button> ();
+		foolButton = foolButton.GetComponent<Button> ();
 		updateButton = updateButton.GetComponent<Button> ();
 		updateButtonText = updateButtonText.GetComponent<Text> ();
 		updateButtonText.resizeTextMaxSize = 14;
 		updateButtonText.resizeTextForBestFit = true;
 		manager = manager.GetComponent<GameManager> ();
+		startButton.enabled = false;
+		foolButton.enabled = false;
 	}
 
 	void Start () {
@@ -51,29 +59,10 @@ public class MainMenu : MonoBehaviour {
 		*/
 	}
 
-	public void StartGetVersion() {
-		print ("Getting version");
-		StartCoroutine (GetVersion ());
-	}
-
-	IEnumerator GetVersion () {
-		updateWWW = new WWW (updateURL);
-		yield return updateWWW;
-		versionText = updateWWW.text.ToString ();
-		print (versionText);
-		gotVersion = float.Parse (versionText);
-		print (gotVersion);
-		CheckIfVersionIsLatest ();
-	}
-
-	void CheckIfVersionIsLatest () {
-		if (gotVersion == version || Application.isWebPlayer) {
-			updateButton.enabled = false;
-			updateButtonText.text = "Up to Date";
-			PlayerPrefs.SetInt("isUpToDate",1);
-		} else {
-			PlayerPrefs.SetInt("isUpToDate",0);
-			PlayerPrefs.Save();
+	public void Update() {
+		if (xml.xmlLoaded) {
+			startButton.enabled = true;
+			foolButton.enabled = true;
 		}
 	}
 

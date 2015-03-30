@@ -6,10 +6,14 @@ using System.IO;
 using System.Threading;
 
 public class Logger : MonoBehaviour {
-	public float frameRate;
-	public int seconds;
 
 	// Use this for initialization
+	void Awake() {
+		Debug.Log ("Logger.Awake()");
+		Debug.Log ("Afroraydude's First Unity Game");
+		Debug.Log ("====================");
+	}
+
 	void Start() {
 
 	}

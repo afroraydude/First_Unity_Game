@@ -5,6 +5,8 @@ Project("{94837657-D8D5-BF16-C1A0-C15C49AC740C}") = "Real_Game", "Assembly-CShar
 EndProject
 Project("{94837657-D8D5-BF16-C1A0-C15C49AC740C}") = "Real_Game", "Assembly-CSharp.csproj", "{A924FEC2-E17B-89FF-3E47-ED794AB892F4}"
 EndProject
+Project("{94837657-D8D5-BF16-C1A0-C15C49AC740C}") = "Real_Game", "Assembly-CSharp-Editor.csproj", "{CF15A66D-5B39-35FC-7A0C-D8A5A92411D4}"
+EndProject
 Project("{94837657-D8D5-BF16-C1A0-C15C49AC740C}") = "Real_Game", "Assembly-UnityScript-firstpass.unityproj", "{EF4F1529-D76C-B60B-8C72-80A3A7646A59}"
 EndProject
 Project("{94837657-D8D5-BF16-C1A0-C15C49AC740C}") = "Real_Game", "Assembly-UnityScript.unityproj", "{D1617153-18D0-786E-40FC-31E06186CC71}"
@@ -23,6 +25,10 @@ Global
 		{A924FEC2-E17B-89FF-3E47-ED794AB892F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A924FEC2-E17B-89FF-3E47-ED794AB892F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A924FEC2-E17B-89FF-3E47-ED794AB892F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF15A66D-5B39-35FC-7A0C-D8A5A92411D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF15A66D-5B39-35FC-7A0C-D8A5A92411D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF15A66D-5B39-35FC-7A0C-D8A5A92411D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF15A66D-5B39-35FC-7A0C-D8A5A92411D4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EF4F1529-D76C-B60B-8C72-80A3A7646A59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EF4F1529-D76C-B60B-8C72-80A3A7646A59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF4F1529-D76C-B60B-8C72-80A3A7646A59}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,7 +41,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																			GlobalSection(MonoDevelopProperties) = preSolution
+																																																															GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

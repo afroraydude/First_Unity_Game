@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Xml.Serialization;
 
 public class KeyBinder : MonoBehaviour {
 	public InputField up;
@@ -15,7 +16,7 @@ public class KeyBinder : MonoBehaviour {
 		left = left.GetComponent<InputField> ();
 		right = right.GetComponent<InputField> ();
 		if (!PlayerPrefs.HasKey ("UpKey")) {
-			up.text = "W";
+			up.text = "w";
 			down.text = "s";
 			left.text = "a";
 			right.text = "d";

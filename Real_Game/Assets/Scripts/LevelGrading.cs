@@ -13,26 +13,29 @@ public class LevelGrading : MonoBehaviour {
 
 	public bool startGrade = false;
 
+	public int levelId;
+
 	public GameManager manager;
+	public LevelData leveldata;
 
 	public Text time;
 	public Text final;
 	public Text death;
 	public Canvas canvas;
 
-	public char finalScoreLetter;
-    public float fgs; // for final grading score
+	public string finalScoreLetter;
+    	public float fgs; // for final grading score
 
-	public float[] timeGrading = new float[4]; // 4 for the 4 grades (A, B, C, D)
+	public ArrayList timeGrading = new ArrayList(); // 4 for the 4 grades (A, B, C, D)
 	int tgs; // For time grading score
 	float timeGiven;
         
-	public int[] deathGrading = new int[4]; // 4 for the 4 grades (A, B, C, D)
+	public ArrayList deathGrading = new ArrayList(); // 4 for the 4 grades (A, B, C, D)
 	int dgs; /// for death grading score
 	int deathsGiven;
         
-	char timeGradingLetter;
-	char deathGradingLetter;
+	string timeGradingLetter;
+	string deathGradingLetter;
 
         
         
@@ -46,6 +49,10 @@ public class LevelGrading : MonoBehaviour {
 		deathsGiven = PlayerPrefs.GetInt("TempDeaths");
 		timeGiven = PlayerPrefs.GetFloat("TempExactScore");
 		canvas.enabled = false;
+		leveldata = leveldata.GetComponent<LevelData> ();
+
+		levelId = Application.loadedLevel;
+
 	}
         
 	void Update() {
@@ -59,6 +66,10 @@ public class LevelGrading : MonoBehaviour {
         }
         
 	void WhenStartGrade() {
+		leveldata.ProcessInfo (levelId);
+		timeGrading = leveldata.tempTime;
+		deathGrading = leveldata.tempDeath;
+		deathGrading = leveldata.tempDeath;
 		GradeTime();
 		GradeDeaths();
 		GradeFinal();
@@ -71,55 +82,55 @@ public class LevelGrading : MonoBehaviour {
         
 	void GradeTime() {
                 // For A
-		if(timeGiven <= timeGrading[0]) {
+		if(timeGiven <= float.Parse(timeGrading[0].ToString())) {
 			tgs = 5;
-			timeGradingLetter = 'A';
+			timeGradingLetter = "A";
 		}
                 // For B
-		else if(timeGiven <= timeGrading[1]) {
+		else if(timeGiven <= float.Parse(timeGrading[1].ToString())) {
 			tgs = 4;
-			timeGradingLetter = 'B';
+			timeGradingLetter = "B";
 		}
                 // For C
-		else if(timeGiven <= timeGrading[2]) {
+		else if(timeGiven <= float.Parse(timeGrading[2].ToString())) {
 			tgs = 3;
-			timeGradingLetter = 'C';
+			timeGradingLetter = "C";
 		}
                 // For D
-         else if (timeGiven <= timeGrading[3]) {
+		else if (timeGiven <= float.Parse(timeGrading[3].ToString())) {
 			tgs = 2;
-			timeGradingLetter = 'D';
+			timeGradingLetter = "D";
 		}
 		else {
 			tgs = 1;
-			timeGradingLetter = 'F';
+			timeGradingLetter = "F";
 		}           
 	}
         
 	void GradeDeaths() {
                 // For A
-		if(deathsGiven <= deathGrading[0]) {
+		if(deathsGiven <= float.Parse(deathGrading[0].ToString())) {
 			dgs = 5;
-			deathGradingLetter = 'A';
+			deathGradingLetter = "A";
 		}
                 // For B
-		else if(deathsGiven <= deathGrading[1]) {
+		else if(deathsGiven <= float.Parse(deathGrading[1].ToString())) {
 			dgs = 4;
-			deathGradingLetter = 'B';
+			deathGradingLetter = "B";
 		}
                 // For C
-		else if(deathsGiven <= deathGrading[2]) {
+		else if(deathsGiven <= float.Parse(deathGrading[2].ToString())) {
 			dgs = 3;
-			deathGradingLetter = 'C';
+			deathGradingLetter = "C";
 		}
                 // For D
-		else if (deathsGiven <= deathGrading[3]) {
+		else if (deathsGiven <= float.Parse(deathGrading[3].ToString())) {
 			dgs = 2;
-			deathGradingLetter = 'D';
+			deathGradingLetter = "D";
 		}
 		else {
 			dgs = 1;
-			deathGradingLetter = 'F';
+			deathGradingLetter = "F";
 		}
 	}
         
@@ -127,22 +138,22 @@ public class LevelGrading : MonoBehaviour {
 		fgs = (tgs + dgs) / 2;
                 // For A
 		if(fgs > 4) {
-			finalScoreLetter = 'A';
+			finalScoreLetter = "A";
 		}
 		// For B
 		else if(fgs > 3) {
-			finalScoreLetter = 'B';
+			finalScoreLetter = "B";
                 }
                 // For C
 		else if(fgs > 2) {
-			finalScoreLetter = 'C';
+			finalScoreLetter = "C";
 		}
                 // For D
 		else if (fgs > 1) {
-			finalScoreLetter = 'D';
+			finalScoreLetter = "D";
 		}
                 else {
-			finalScoreLetter = 'F';
+			finalScoreLetter = "F";
 		}
 	}
 }

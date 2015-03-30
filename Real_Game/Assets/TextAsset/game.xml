@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Backup -->
+<game>
+  <info>
+    <name>Afroraydude's fUnity Game</name>
+    <url>http://afroraydude.github.io/First_Unity_Game</url>
+    <version>4.3</version>
+  </info>
+  <level id="1">
+    <time>
+      <a>10</a>
+      <b>15</b>
+      <c>20</c>
+      <d>25</d>
+    </time>
+    <death>
+      <a>1</a>
+      <b>2</b>
+      <c>3</c>
+      <d>4</d>
+    </death>
+  </level>
+  <level id="2">
+    <time>
+      <a>15</a>
+      <b>20</b>
+      <c>25</c>
+      <d>30</d>
+    </time>
+    <death>
+      <a>2</a>
+      <b>4</b>
+      <c>6</c>
+      <d>8</d>
+    </death>
+  </level>
+  <level id="3">
+    <time>
+      <a>20</a>
+      <b>25</b>
+      <c>30</c>
+      <d>35</d>
+    </time>
+    <death>
+      <a>3</a>
+      <b>6</b>
+      <c>9</c>
+      <d>12</d>
+    </death>
+  </level>
+  <level id="4">
+    <time>
+      <a>30</a>
+      <b>35</b>
+      <c>40</c>
+      <d>45</d>
+    </time>
+    <death>
+      <a>4</a>
+      <b>8</b>
+      <c>12</c>
+      <d>16</d>
+    </death>
+  </level>
+</game>
+<!-- XML...is it better than JSON? Which onew would be easier for Unity? That is what I wanted to know. But Until then, I will have both. -->

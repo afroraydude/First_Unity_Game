@@ -3,39 +3,50 @@ using System.Collections;
 
 public class Patrol : MonoBehaviour 
 {
-	// Size is the amount of points
-	public Transform[] patrolPoints;
-
-	private int currentPoint;
-
-	public float moveSpeed;
-	// Use this for initialization
-	void Start () 
-	{
-		transform.position = patrolPoints[0].position;
-		currentPoint = 0;
-
+	public GameManager manager;
+	public Transform[] points;
+	private int destPoint = 0;
+	private NavMeshAgent agent;
+	
+	
+	void Start () {
+		agent = GetComponent<NavMeshAgent>();
+		
+		// Disabling auto-braking allows for continuous movement
+		// between points (ie, the agent doesn't slow down as it
+		// approaches a destination point).
+		agent.autoBraking = true;
+		
+		GotoNextPoint();
+		manager = manager.GetComponent<GameManager> ();
 	}
 	
-	// Update is called once per frame
-	void Update () 
-	{
-		if (transform.position == patrolPoints[currentPoint].position)
-		{
-			currentPoint++;
-		}
-		if (currentPoint >= patrolPoints.Length)
-		{
-			currentPoint = 0;
-		}
-		transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed * Time.deltaTime);
+	
+	void GotoNextPoint() {
+		// Returns if no points have been set up
+		if (points.Length == 0)
+			return;
+		
+		// Set the agent to go to the currently selected destination.
+		agent.destination = points[destPoint].position;
+		
+		// Choose the next point in the array as the destination,
+		// cycling to the start if necessary.
+		destPoint = (destPoint + 1) % points.Length;
 	}
-
-	void OnCollisionEnter(Collision other)
-	{
-		if (other.transform.tag == "Enemy")
-		{
-			print("I think I hit something");
+	
+	
+	void Update () {
+		// Choose the next destination point when the agent gets
+		// close to the current one.
+		if (!manager.paused) {
+			if (agent.remainingDistance < 0.5f) {
+				GotoNextPoint ();
+			}
+			agent.enabled = true;
+		} 
+		if (manager.paused) { 
+			agent.enabled = false;
 		}
 	}
 }

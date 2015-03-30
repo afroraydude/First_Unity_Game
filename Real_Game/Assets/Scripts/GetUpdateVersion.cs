@@ -13,7 +13,8 @@ public class GetUpdateVersion : MonoBehaviour {
 	public float gotVersion;
 	
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+		Debug.Log ("Current Version: " + version.ToString());
 		updateButtonText.resizeTextMaxSize = 14;
 		updateButtonText.resizeTextForBestFit = true;
 		/**
@@ -35,18 +36,18 @@ public class GetUpdateVersion : MonoBehaviour {
 		update = new WWW (updateURL);
 		yield return update;
 		gotVersionText = update.text.ToString();
-		print (gotVersionText);
+		Debug.Log ("Latest Version: " + gotVersionText);
 		gotVersion = float.Parse (gotVersionText);
-		print (gotVersion);
 		CheckIfVersionIsLatest ();
 	}
 
 	void CheckIfVersionIsLatest () {
-		if (gotVersion == version || Application.isWebPlayer) {
+		if (gotVersion <= version || Application.isWebPlayer) {
 			updateButton.enabled = false;
 			updateButtonText.text = "Up to Date";
+			Debug.Log ("Version is up to date");
 		} else {
-			// end
+			Debug.LogWarning("Not Up to Date! Please Update!");
 		}
 	}
 }

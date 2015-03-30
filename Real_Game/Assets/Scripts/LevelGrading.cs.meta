@@ -1,13 +1,18 @@
 fileFormatVersion: 2
 guid: 3a194e12da664a1469ff8320effe40bb
+timeCreated: 1427675081
+licenseType: Pro
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - manager: {instanceID: 0}
-  - time: {fileID: 11483550, guid: b6e7c1cbc194f104c82bc5eb4dbb196b, type: 2}
-  - final: {fileID: 11483560, guid: b6e7c1cbc194f104c82bc5eb4dbb196b, type: 2}
-  - death: {fileID: 11483548, guid: b6e7c1cbc194f104c82bc5eb4dbb196b, type: 2}
-  - canvas: {fileID: 22383560, guid: b6e7c1cbc194f104c82bc5eb4dbb196b, type: 2}
+  - leveldata: {fileID: 11463778, guid: f10b3a987f8b5b74a96c3e2da4a106c7, type: 2}
+  - time: {instanceID: 0}
+  - final: {instanceID: 0}
+  - death: {instanceID: 0}
+  - canvas: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

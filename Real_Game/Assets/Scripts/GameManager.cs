@@ -18,10 +18,11 @@ public class GameManager : MonoBehaviour {
 	
 	// Score based stuff
 	public float highScore;
-	
+	public bool paused = false;
+
 	// Level based stuff
-	int currentLevel;
-	int unlockedLevels;
+	public int currentLevel;
+	public int unlockedLevels;
 
 	public Canvas mobileControls;
 	// Things that deal with GUI
@@ -82,17 +83,25 @@ public class GameManager : MonoBehaviour {
 			// do nothing
 		}
 		*/
+		if (PlayerPrefs.HasKey("Level" + currentLevel.ToString () + "Score")) {
+			highscoreText.text = PlayerPrefs.GetString ("Level" + currentLevel.ToString () + "Score");
+		} else {
+			highscoreText.text = "0.00";
+		}
 	}
 	
 	// This is ran every tick
 	void Update() {
-		//This records the time it took to complete the level
-		startTime += Time.deltaTime;
-		//This puts it into a string so that it can be viewed on the GUI
-		currentTime = string.Format ("{0:0.0}", startTime);
+		if (!paused) {
+			//This records the time it took to complete the level
+			startTime += Time.deltaTime;
+			//This puts it into a string so that it can be viewed on the GUI
+			currentTime = string.Format ("{0:0.0}", startTime);
 
-		stopwatchText.text = currentTime;
-		highscoreText.text = PlayerPrefs.GetString("Level" + currentLevel.ToString() + "Score");
+			stopwatchText.text = currentTime;
+		} else {
+
+		}
 	}
 	
 	// GUI goes here
@@ -124,7 +133,7 @@ public class GameManager : MonoBehaviour {
 	// For when the player completes a level
 	// TODO: Fix issue in flash were it does not care if the high score is > or < the startTime, it always overrides it.
 	public void CompleteLevel() {
-		
+		paused = true;
 		// If the high score is less than the time it took you to complete the level
 		if(highScore > startTime) {
 			// Make it equal the time it took you to complete the level

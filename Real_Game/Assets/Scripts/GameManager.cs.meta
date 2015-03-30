@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7ce0fdd8b255e614889c74c004d25358
-timeCreated: 1426045729
+timeCreated: 1427748723
 licenseType: Pro
 MonoImporter:
   serializedVersion: 2
@@ -10,7 +10,7 @@ MonoImporter:
   - stopwatchText: {fileID: 11495482, guid: 4db78f282d217294b8c56397533cf77f, type: 2}
   - player: {fileID: 11400000, guid: db07b7fd7e43f284c96c234383d77545, type: 2}
   - levelGrading: {fileID: 11448864, guid: 3c2ff6aeeb40ab941ba6faee46007c5d, type: 2}
-  executionOrder: 2
+  executionOrder: 0
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 
