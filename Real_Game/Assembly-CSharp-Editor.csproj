@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Editor\CreateBundle.cs" />
      <None Include="Assets\TextAsset\game.xml" />
+     <None Include="Assets\Materials\minecraftia.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

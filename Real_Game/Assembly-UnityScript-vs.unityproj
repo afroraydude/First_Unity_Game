@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\SmoothFollow.js" />
      <Compile Include="Assets\Scripts\SmoothLookAt.js" />
      <None Include="Assets\TextAsset\game.xml" />
+     <None Include="Assets\Materials\minecraftia.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/Rashaad/Documents/GitHub/First_Unity_Game/Real_Game/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
