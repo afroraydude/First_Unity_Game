@@ -20,7 +20,7 @@ Tune into here for more news 'n' stuff.
 
 Things to do
 
-- [ ] ~~Flash Version~~
+No more flash version :(, please use WebGL-enabled browser and the WebGL version.
 - [ ] GUI Images
 - [X] Options menu
 - [X] Add Level 5
