@@ -72,4 +72,8 @@
     <death>
       <a>5</a>
       <b>10</b>
- 
+ 	  <c>15</c>
+ 	  <d>20</d>
+ 	  </death>
+  </level>
+</game>

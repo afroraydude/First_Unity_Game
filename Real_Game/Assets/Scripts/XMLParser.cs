@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 
 public class XMLParser : MonoBehaviour {
 	XmlDocument projectDoc;
-	public string xml = "http://afroraydude.com/unity/game.xml";
+	public string xml = "https://raw.githubusercontent.com/afroraydude/First_Unity_Game/gh-pages/game.xml";
 	public int tempId;
 	public LevelData levelData;
 	WWW www;

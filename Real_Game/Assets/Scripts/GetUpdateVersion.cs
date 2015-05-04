@@ -9,8 +9,12 @@ public class GetUpdateVersion : MonoBehaviour {
 	public Text updateButtonText;
 	public string updateURL;
 	public float version;
-	public string gotVersionText;
-	public float gotVersion;
+	public string gotVersionText = "null";
+	public float gotVersion = 1234567890;
+	public int versionDate; // alternate to version...either or could work
+	// public WWW dateUpdate
+	// public int gotVersionDate
+	// public int gotVersionDateText
 	
 	// Use this for initialization
 	void Awake () {
