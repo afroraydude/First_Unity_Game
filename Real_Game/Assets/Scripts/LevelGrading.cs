@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 /**
  * Class LevelGrading by Afroraydude
@@ -14,7 +15,6 @@ public class LevelGrading : MonoBehaviour {
 	public bool startGrade = false;
 
 	public int levelId;
-
 	public GameManager manager;
 	public LevelData leveldata;
 
@@ -61,23 +61,21 @@ public class LevelGrading : MonoBehaviour {
 		}
 	}
         
-        void OnGUI() {
-                // I might want to do the GUI
-        }
-        
 	void WhenStartGrade() {
-		leveldata.ProcessInfo (levelId);
-		timeGrading = leveldata.tempTime;
-		deathGrading = leveldata.tempDeath;
-		deathGrading = leveldata.tempDeath;
-		GradeTime();
-		GradeDeaths();
-		GradeFinal();
+		if (Application.isEditor) {
+			// Do nothing
+		} else {
+			leveldata.ProcessInfo (levelId);
+			timeGrading = leveldata.tempTime;
+			deathGrading = leveldata.tempDeath;
+			GradeTime();
+			GradeDeaths();
+			GradeFinal();
+			death.text = "Death Score: " + deathGradingLetter.ToString();
+			time.text = "Time Score: " + timeGradingLetter.ToString();
+			final.text = "Final Score: " + finalScoreLetter.ToString();
+		}
 		canvas.enabled = true;
-		death.text = "Death Score: " + deathGradingLetter.ToString();
-		time.text = "Time Score: " + timeGradingLetter.ToString();
-		final.text = "Final Score: " + finalScoreLetter.ToString();
-
 	}
         
 	void GradeTime() {
@@ -154,7 +152,7 @@ public class LevelGrading : MonoBehaviour {
 		}
                 else {
 			finalScoreLetter = "F";
-		}
+		} 
 	}
 }
 

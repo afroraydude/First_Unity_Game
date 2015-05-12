@@ -77,6 +77,10 @@ public class XMLParser : MonoBehaviour {
 		}
 		xmlLoaded = true;
 		print (levelData.timec [1] + "!");
+		print (levelData.timec [2] + "!");
+		print (levelData.timec [3] + "!");
+		print (levelData.timec [4] + "!");
+		print (levelData.timec [5] + "!");
 	}
 
 	// Update is called once per frame

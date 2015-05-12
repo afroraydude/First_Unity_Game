@@ -23,31 +23,22 @@ public class GameManager : MonoBehaviour {
 
 	// Level based stuff
 	public int currentLevel;
-	public int unlockedLevels;
+	private int unlockedLevels;
 
 	public Canvas mobileControls;
-	// Things that deal with GUI
-	/** old code
-	public Rect stopwatchRect;
-	Rect stopwatchBoxRect;
-	Rect highScoreRect; // Delete
-	Rect highScoreBox; // Delete
-	*/
-	public GUISkin skin;
 	public Text highscoreText;
 	public Text stopwatchText;
 
 
 	// Stuff that deals with the score system.	
-	public float startTime;
+	private float startTime;
 	private string currentTime;
 	public string highTime;
 	public int deaths;
 
-	string clevel;
+	private string clevel;
 	
 	//Load other classes
-	// Could also be: public PlayerMovement player = new PlayerMovement();
 	public PlayerMovement player;
 	public LevelGrading levelGrading;
 	
@@ -64,13 +55,12 @@ public class GameManager : MonoBehaviour {
 		mobileControls = mobileControls.GetComponent<Canvas>();
 		// DontDestroyOnLoad(gameObject);
 
-		if(!Application.isMobilePlatform) {
+		if (!Application.isMobilePlatform) {
 			mobileControls.enabled = false;
 		}
 
 		clevel = Application.loadedLevelName;
-
-		// Remove that pesky shit
+		
 		currentLevel = int.Parse(Regex.Replace (clevel, "[^0-9.]", ""));
 
 		// If the levels you unlocked is less than the level you are at
@@ -87,15 +77,18 @@ public class GameManager : MonoBehaviour {
 			// do nothing
 		}
 		*/
+
+		// If there is a high score made by the player, do this
 		if (PlayerPrefs.HasKey("Level" + currentLevel.ToString () + "Score")) {
 			highscoreText.text = PlayerPrefs.GetString ("Level" + currentLevel.ToString () + "Score");
 		} else {
-			highscoreText.text = "0.00";
+			highscoreText.text = "NULL";
 		}
 	}
 	
 	// This is ran every tick
 	void Update() {
+		// if the game isnt paused
 		if (!paused) {
 			//This records the time it took to complete the level
 			startTime += Time.deltaTime;
@@ -104,20 +97,10 @@ public class GameManager : MonoBehaviour {
 
 			stopwatchText.text = currentTime;
 		} else {
-
+			// Stop everything!
 		}
 	}
-	
-	// GUI goes here
-	void OnGUI() {
-		/** Old/Just for refrence
-		GUI.skin = skin;
-		GUI.Box (stopwatchBoxRect, "");
-		GUI.Label(stopwatchRect, currentTime, skin.GetStyle ("Stopwatch"));
-		GUI.Label (highScoreRect, PlayerPrefs.GetString("Level" + currentLevel.ToString() + "Score"));
-		GUI.Box (highScoreBox, "");
-		*/
-	}
+
 	/** Starts the game */
 	public void MainMenuToLevelOne() {
 		// To go to Level 1
@@ -134,11 +117,10 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	// For when the player completes a level
-	// TODO: Fix issue in flash were it does not care if the high score is > or < the startTime, it always overrides it.
 	public void CompleteLevel() {
 		paused = true;
 		// If the high score is less than the time it took you to complete the level
-		if(highScore > startTime) {
+		if (highScore > startTime) {
 			// Make it equal the time it took you to complete the level
 			highScore = startTime;
 			highTime = string.Format ("{0:0.0}", highScore);
@@ -161,8 +143,7 @@ public class GameManager : MonoBehaviour {
 		PlayerPrefs.Save();
 	}
 	
-	/** After LevelGrading is done, this happens so that we can load the level's scores 
-	*   Will be obsolete after the 4.6 update is done */
+	/** After LevelGrading is done, this happens so that we can load the level's scores */
 	public void AfterGrading() {
 		currentLevel += 1;
 		/** Unnessesary
@@ -173,11 +154,6 @@ public class GameManager : MonoBehaviour {
 		} else {
 			Application.LoadLevel ("Level" + currentLevel);
 		}
-	}
-	
-	// Pretty straightforward
-	public void StartGame() {
-
 	}
 
 	/**
