@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 // using UnityEditor;
+using PoqXert.MessageBox;
 
 public class Options : MonoBehaviour {
 	public Text resText;
@@ -63,10 +64,16 @@ public class Options : MonoBehaviour {
 		PlayerPrefs.SetFloat ("ResSlider", screenRes);
 		PlayerPrefs.Save ();
 		print ("Settings applied and saved");
+		MsgBox.Show (0, "Settings have been applied", "Information", MsgBoxButtons.OK, MsgBoxStyle.Information, Done, true, "", "", "");
 
+	}
+
+	void Done(int i, DialogResult result) {
+		MsgBox.Close ();
 	}
 
 	public void GoBack () {
 		Application.LoadLevel (0);
 	}
+
 }
