@@ -168,7 +168,11 @@ public class GameManager : MonoBehaviour {
 		/** Unnessesary
 		unlockedLevels = currentLevel; */
 		PlayerPrefs.SetInt ("unlockedLevels", unlockedLevels);
-		Application.LoadLevel("Level" + currentLevel);
+		if (Application.loadedLevelName == "Level5") {
+			Application.LoadLevel ("MainMenu 1");
+		} else {
+			Application.LoadLevel ("Level" + currentLevel);
+		}
 	}
 	
 	// Pretty straightforward

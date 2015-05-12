@@ -9,8 +9,7 @@ public class Logger : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake() {
-		print ("Afroraydude's First Unity Game Loaded");
-		print ("=====================================");
+
 	}
 
 	void Start() {
