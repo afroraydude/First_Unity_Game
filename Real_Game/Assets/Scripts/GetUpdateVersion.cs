@@ -53,7 +53,7 @@ public class GetUpdateVersion : MonoBehaviour {
 			print ("Version is up to date");
 		} else {
 			print ("Warning: Not Up to Date! Please Update!");
-			if (PlayerPrefs.HasKey("UpdateChecked")) {
+			if (!PlayerPrefs.HasKey("UpdateChecked")) {
 				MsgBox.Show (0, "Would you like to open the download page?", "New Update Available", MsgBoxButtons.YES_NO, MsgBoxStyle.Warning, GoAndUpdate, true, "", "", "");
 			}
 		}
