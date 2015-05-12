@@ -53,13 +53,22 @@ public class GetUpdateVersion : MonoBehaviour {
 			print ("Version is up to date");
 		} else {
 			print ("Warning: Not Up to Date! Please Update!");
-			MsgBox.Show (2, "Out of date! Please Update!", "Hey, listen!", MsgBoxButtons.OK, MsgBoxStyle.Warning, GoAndUpdate, true, "", "", "");
+			if (PlayerPrefs.HasKey("UpdateChecked")) {
+				MsgBox.Show (0, "Would you like to open the download page?", "New Update Available", MsgBoxButtons.YES_NO, MsgBoxStyle.Warning, GoAndUpdate, true, "", "", "");
+			}
 		}
 	}
 
 	void GoAndUpdate(int i, DialogResult result) {
-		print ("Choice = " + i.ToString ());
-		Application.OpenURL ("https://github.com/afroraydude/First_Unity_Game/releases/latest");
-		MsgBox.Close ();
+		print ("Choice = " + result.ToString ());
+		if (result.ToString() == "YES_OK") {
+			Application.OpenURL ("https://github.com/afroraydude/First_Unity_Game/releases/latest");
+		}
+		MsgBox.Close();
+		PlayerPrefs.SetInt ("UpdateChecked", 1);
+	}
+
+	void OnApplicationQuit () {
+		PlayerPrefs.DeleteKey ("UpdateChecked");
 	}
 }

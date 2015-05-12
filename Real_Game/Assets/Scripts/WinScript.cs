@@ -45,5 +45,8 @@ public class WinScript : MonoBehaviour {
 			manager.BackToMainMenu();
 		} */
 	}
-	
+
+	void OnApplicationQuit () {
+		PlayerPrefs.DeleteKey ("UpdateChecked");
+	}
 }

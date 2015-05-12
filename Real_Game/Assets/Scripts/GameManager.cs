@@ -156,8 +156,12 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	void OnApplicationQuit () {
+		PlayerPrefs.DeleteKey ("UpdateChecked");
+	}
 	/**
 	public int GetCurrentLevel() {
 		return currentLevel;
 	} */
+
 }

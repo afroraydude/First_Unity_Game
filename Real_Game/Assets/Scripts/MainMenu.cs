@@ -86,4 +86,7 @@ public class MainMenu : MonoBehaviour {
 		Application.LoadLevel ("Animation");
 	}
 
+	void OnApplicationQuit () {
+		PlayerPrefs.DeleteKey ("UpdateChecked");
+	}
 }
