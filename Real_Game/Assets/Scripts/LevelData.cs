@@ -35,8 +35,8 @@ public class LevelData : MonoBehaviour {
 		tempDeath.Add (deathb [templevelId]);
 		tempDeath.Add (deathc [templevelId]);
 		tempDeath.Add (deathd [templevelId]);
-		Debug.Log (tempTime [0].ToString () + " " + tempTime [1].ToString () + " " + tempTime [2].ToString () + " " + tempTime [3].ToString ());
-		Debug.Log (tempDeath [0].ToString () + " " + tempTime [1].ToString () + " " + tempTime [2].ToString () + " " + tempTime [3].ToString ());
+		print (tempTime [0].ToString () + " " + tempTime [1].ToString () + " " + tempTime [2].ToString () + " " + tempTime [3].ToString ());
+		print (tempDeath [0].ToString () + " " + tempTime [1].ToString () + " " + tempTime [2].ToString () + " " + tempTime [3].ToString ());
 		doneProcessing = true;
 	}
 }

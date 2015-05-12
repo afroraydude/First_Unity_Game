@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 /**
 * Created By Afroraydude
@@ -67,7 +68,10 @@ public class GameManager : MonoBehaviour {
 			mobileControls.enabled = false;
 		}
 
-		currentLevel = Application.loadedLevel;
+		clevel = Application.loadedLevelName;
+
+		// Remove that pesky shit
+		currentLevel = int.Parse(Regex.Replace (clevel, "[^0-9.]", ""));
 
 		// If the levels you unlocked is less than the level you are at
 		// Not useful yet
@@ -116,12 +120,11 @@ public class GameManager : MonoBehaviour {
 	}
 	/** Starts the game */
 	public void MainMenuToLevelOne() {
-		// To go to Level 1 
-		currentLevel = 1;
+		// To go to Level 1
 		/** This might not be required anymore:
 		PlayerPrefs.SetInt("LevelsCompleted", currentLevel);
 		PlayerPrefs.Save(); */
-		Application.LoadLevel(currentLevel);
+		Application.LoadLevel("Level1");
 	}
 
 	public void BackToMainMenu() {
@@ -162,14 +165,15 @@ public class GameManager : MonoBehaviour {
 	*   Will be obsolete after the 4.6 update is done */
 	public void AfterGrading() {
 		currentLevel += 1;
-		unlockedLevels = currentLevel;
+		/** Unnessesary
+		unlockedLevels = currentLevel; */
 		PlayerPrefs.SetInt ("unlockedLevels", unlockedLevels);
-		Application.LoadLevel(currentLevel);
+		Application.LoadLevel("Level" + currentLevel);
 	}
 	
 	// Pretty straightforward
 	public void StartGame() {
-		currentLevel = 0;
+
 	}
 
 	/**

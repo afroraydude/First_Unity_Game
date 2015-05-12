@@ -30,16 +30,17 @@ public class XMLParser : MonoBehaviour {
 		yield return www;
 		if (www.error == null && !www.text.Contains("Backup")) {
 			//Sucessfully loaded the XML
-			Debug.Log ("Loaded XML from URL.");
+			print ("Loaded XML from URL.");
 			//Create a new XML document out of the loaded data
 			projectDoc.LoadXml (www.text);
 			//Point to the item nodes and process them
 			ProccessItems (projectDoc.SelectNodes("game/level"));
 		}
 		else {
-			Debug.Log("ERROR: " + www.error);
-			Debug.LogWarning("Error loading from URL, using backup file.");
+			print("ERROR: " + www.error);
+			print("Warning: Error loading from URL, using backup file.");
 			projectDoc.LoadXml(textasset.text);
+			ProccessItems (projectDoc.SelectNodes("game/level"));
 		}
 		
 	}
@@ -62,7 +63,7 @@ public class XMLParser : MonoBehaviour {
 			levelData.deathd.Add (node.SelectSingleNode("death/d").InnerText);
 
 			tempId = int.Parse(node.Attributes.GetNamedItem("id").Value.ToString());
-			Debug.Log("Loading Grading data for Level #" + tempId.ToString());
+			print("Loading Grading data for Level #" + tempId.ToString());
 
 			levelData.timea.Insert(tempId, node.SelectSingleNode("time/a").InnerText);
 			levelData.timeb.Insert(tempId, node.SelectSingleNode("time/b").InnerText);
@@ -75,7 +76,7 @@ public class XMLParser : MonoBehaviour {
 
 		}
 		xmlLoaded = true;
-		Debug.Log (levelData.timec [1] + "!");
+		print (levelData.timec [1] + "!");
 	}
 
 	// Update is called once per frame

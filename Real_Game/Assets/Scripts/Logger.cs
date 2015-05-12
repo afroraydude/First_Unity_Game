@@ -9,9 +9,8 @@ public class Logger : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake() {
-		Debug.Log ("Logger.Awake()");
-		Debug.Log ("Afroraydude's First Unity Game");
-		Debug.Log ("====================");
+		print ("Afroraydude's First Unity Game Loaded");
+		print ("=====================================");
 	}
 
 	void Start() {

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using PoqXert.MessageBox;
 
 public class GetUpdateVersion : MonoBehaviour {
 
@@ -18,7 +19,7 @@ public class GetUpdateVersion : MonoBehaviour {
 	
 	// Use this for initialization
 	void Awake () {
-		Debug.Log ("Current Version: " + version.ToString());
+		print ("Current Version: " + version.ToString());
 		updateButtonText.resizeTextMaxSize = 14;
 		updateButtonText.resizeTextForBestFit = true;
 		/**
@@ -40,7 +41,7 @@ public class GetUpdateVersion : MonoBehaviour {
 		update = new WWW (updateURL);
 		yield return update;
 		gotVersionText = update.text.ToString();
-		Debug.Log ("Latest Version: " + gotVersionText);
+		print ("Latest Version: " + gotVersionText);
 		gotVersion = float.Parse (gotVersionText);
 		CheckIfVersionIsLatest ();
 	}
@@ -49,9 +50,15 @@ public class GetUpdateVersion : MonoBehaviour {
 		if (gotVersion <= version || Application.isWebPlayer) {
 			updateButton.enabled = false;
 			updateButtonText.text = "Up to Date";
-			Debug.Log ("Version is up to date");
+			print ("Version is up to date");
 		} else {
-			Debug.LogWarning("Not Up to Date! Please Update!");
+			print ("Warning: Not Up to Date! Please Update!");
+			MsgBox.Show (2, "Out of date! Please Update!", "Hey, listen!", MsgBoxButtons.OK, MsgBoxStyle.Warning, GoAndUpdate, true, "", "", "");
 		}
+	}
+
+	void GoAndUpdate(int i, DialogResult result) {
+		print ("Choice = " + i.ToString ());
+		Application.OpenURL ("https://github.com/afroraydude/First_Unity_Game/releases/latest");
 	}
 }
