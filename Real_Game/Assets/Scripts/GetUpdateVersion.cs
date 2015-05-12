@@ -60,5 +60,6 @@ public class GetUpdateVersion : MonoBehaviour {
 	void GoAndUpdate(int i, DialogResult result) {
 		print ("Choice = " + i.ToString ());
 		Application.OpenURL ("https://github.com/afroraydude/First_Unity_Game/releases/latest");
+		MsgBox.Close ();
 	}
 }
