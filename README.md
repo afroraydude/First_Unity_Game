@@ -2,7 +2,7 @@ First_Unity_Game
 ================
 My first Unity Game
 
-~Developement continued! (AGAIN! [May2015])~
+-Developement continued! (AGAIN! [May2015])-
 
 Synopsis: This is a puzzle platformer where you play as a block named "Blue", you must avoid the enemy "Reds" and get to the goal.
 
