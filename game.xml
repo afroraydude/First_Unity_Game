@@ -63,7 +63,7 @@
     </death>
   </level>
   <level id="5">
-  	<time>
+    <time>
       <a>45</a>
       <b>50</b>
       <c>55</c>
@@ -72,12 +72,12 @@
     <death>
       <a>5</a>
       <b>10</b>
- 	    <c>15</c>
- 	    <d>20</d>
- 	  </death>
+      <c>15</c>
+      <d>20</d>
+    </death>
   </level>
-    <level id="6">
-  	<time>
+  <level id="6">
+    <time>
       <a>45</a>
       <b>50</b>
       <c>55</c>
@@ -86,9 +86,8 @@
     <death>
       <a>5</a>
       <b>10</b>
- 	    <c>15</c>
- 	   <d>20</d>
- 	  </death>
+      <c>15</c>
+      <d>20</d>
+    </death>
   </level>
 </game>
-
