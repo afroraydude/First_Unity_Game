@@ -4,6 +4,7 @@
     <name>Afroraydude's fUnity Game</name>
     <url>http://afroraydude.com/unity/game.xml</url>
     <version>alpha-1.1</version>
+    <isOnline>true</isOnline>
   </info>
   <level id="1">
     <time>
@@ -71,9 +72,23 @@
     <death>
       <a>5</a>
       <b>10</b>
- 	  <c>15</c>
- 	  <d>20</d>
+ 	    <c>15</c>
+ 	    <d>20</d>
+ 	  </death>
+  </level>
+    <level id="6">
+  	<time>
+      <a>45</a>
+      <b>50</b>
+      <c>55</c>
+      <d>60</d>
+    </time>
+    <death>
+      <a>5</a>
+      <b>10</b>
+ 	    <c>15</c>
+ 	   <d>20</d>
  	  </death>
   </level>
 </game>
-<!-- XML...is it better than JSON? Which onew would be easier for Unity? That is what I wanted to know. But Until then, I will have both. -->
+
