@@ -3,6 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Xml.Serialization;
 
+/**
+ * Made by afroraydude
+ * This is an incomplete script
+*/
 public class KeyBinder : MonoBehaviour {
 	public InputField up;
 	public InputField down;
