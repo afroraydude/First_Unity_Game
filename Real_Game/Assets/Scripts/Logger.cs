@@ -3,13 +3,8 @@ using System.Collections;
 
 public class Logger : MonoBehaviour {
 
-	// Use this for initialization
-	void Awake() {
-
-	}
-
 	void Start() {
-
+		print("Game is active");
 	}
 	
 	// Update is called once per frame
