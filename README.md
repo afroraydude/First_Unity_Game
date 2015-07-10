@@ -1,5 +1,6 @@
 First_Unity_Game
 ================
+REMINDER TO SELF, REMOVE THE DLL AND PUT ALL SCRIPTS BACK
 My first Unity Game
 
 ~~Developement continued! (AGAIN! [May2015])~~
