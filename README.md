@@ -15,8 +15,8 @@ This was created based upon a tutorial, and then it started moving into its own 
   
 Plans for next version:
 
-1. A
-	 - [X] List item
+1. Add enimies
+  - [ ] Add spikes
 2. Add more levels
   - [ ] Add Level 6
   - [ ] Add Level 7
