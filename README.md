@@ -14,8 +14,8 @@ This was created based upon a tutorial, and then it started moving into its own 
   * Spikes
   
 Plans for next version:
-1. Add more enemies
-  - [ ] Add spikes
+1. A
+	 - [X] List item
 2. Add more levels
   - [ ] Add Level 6
   - [ ] Add Level 7
