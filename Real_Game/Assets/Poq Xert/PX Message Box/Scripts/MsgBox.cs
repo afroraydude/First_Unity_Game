@@ -52,22 +52,22 @@ namespace PoqXert.MessageBox
 			[TooltipAttribute("Name of style")]
 			public string name;
 			//Цвет заголовка
-			[TooltipAttribute("Color of caption")]
+			[Tooltip("Color of caption")]
 			public Color caption;
 			//Цвет фона
-			[TooltipAttribute("Color of background")]
+			[Tooltip("Color of background")]
 			public Color background;
 			//Цвет кнопки "Да"/"Ок"
-			[TooltipAttribute("Color of button \"Yes/Ok\"")]
+			[Tooltip("Color of button \"Yes/Ok\"")]
 			public Color btnYesColor;
 			//Цвет кнопки "Нет"
-			[TooltipAttribute("Color of button \"No\"")]
+			[Tooltip("Color of button \"No\"")]
 			public Color btnNoColor;
 			//Цвет кнопки "Отмена"
-			[TooltipAttribute("Color of button \"Cancel\"")]
+			[Tooltip("Color of button \"Cancel\"")]
 			public Color btnCancelColor;
 			//Иконка
-			[TooltipAttribute("Icon for MessageBox")]
+			[Tooltip("Icon for MessageBox")]
 			public Sprite icon;
 		}
 

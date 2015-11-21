@@ -17,7 +17,6 @@ public class MainMenu : MonoBehaviour {
 	public Button startButton;
 	public string updateURL;
 	public Button foolButton;
-	WWW updateWWW;
 	public float version;
 	public string versionText;
 	public float gotVersion;
