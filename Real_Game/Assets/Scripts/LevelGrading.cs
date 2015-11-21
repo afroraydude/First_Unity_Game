@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
-using UnityEngine.EventSystems;
 
 /**
  * Class LevelGrading by Afroraydude

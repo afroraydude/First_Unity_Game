@@ -8,8 +8,6 @@ using UnityEngine.UI;
  * That is about it
 */
 
-// for using IEnums with voids check:
-// https://www.google.com/search?sourceid=chrome-psyapi2&ion=1&espv=2&es_th=1&ie=UTF-8&q=unity%20c%23%20call%20ienumerator%20from%20void&oq=unity%20c%23%20call%20ienumerator%20from%20void&aqs=chrome..69i57.39974j0j7
 public class MainMenu : MonoBehaviour {
 	public GameManager manager;
 	//Ping ping;
@@ -24,10 +22,12 @@ public class MainMenu : MonoBehaviour {
 	public string versionText;
 	public float gotVersion;
 	public XMLParser xml;
+    public UpdaterStarter updateStarter;
 
-	void Awake () {
-		//ping = new Ping("8.8.8.8");
-		if(PlayerPrefs.HasKey("ResHeight")){
+    void Awake () {
+        //ping = new Ping("8.8.8.8");
+        updateStarter = updateStarter.GetComponent<UpdaterStarter>();
+        if (PlayerPrefs.HasKey("ResHeight")){
 			Screen.SetResolution(PlayerPrefs.GetInt ("ResWidth"), PlayerPrefs.GetInt ("ResHeight"), false);
 			if(PlayerPrefs.GetInt("GoFullscreen") == 1) {
 				Screen.fullScreen = true;
@@ -75,7 +75,7 @@ public class MainMenu : MonoBehaviour {
 		Application.Quit ();
 	}
 	public void UpdateGame() {
-		Application.OpenURL("https://github.com/afroraydude/First_Unity_Game/releases/latest");
+		
 	}
 
 	public void ToOptionsMenu() {

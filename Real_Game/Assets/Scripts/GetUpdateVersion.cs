@@ -13,6 +13,7 @@ public class GetUpdateVersion : MonoBehaviour {
 	public string gotVersionText = "null";
 	public float gotVersion = 1234567890;
 	public int versionDate; // alternate to version...either or could work
+    public UpdaterStarter updateStarter;
 	// public WWW dateUpdate
 	// public int gotVersionDate
 	// public int gotVersionDateText
@@ -21,7 +22,8 @@ public class GetUpdateVersion : MonoBehaviour {
 	void Awake () {
 		print ("Current Version: " + version.ToString());
 		updateButtonText.resizeTextMaxSize = 14;
-		updateButtonText.resizeTextForBestFit = true;
+        updateButtonText.resizeTextForBestFit = true;
+        updateStarter = updateStarter.GetComponent<UpdaterStarter>();
 		/**
 		StartCoroutine( Do() );
       		//or the less efficient version that takes a string, but is limited to a single parameter.:
