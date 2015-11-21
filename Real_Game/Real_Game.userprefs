@@ -1,10 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Options.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Levels\UpdaterStarter\UpdaterStarter.cs">
     <Files>
-      <File FileName="Assets\Scripts\Options.cs" Line="72" Column="19" />
-      <File FileName="Assets\Scripts\GetUpdateVersion.cs" Line="57" Column="164" />
-      <File FileName="Assets\Scripts\XMLParser.cs" Line="41" Column="4" />
+      <File FileName="Assets\Levels\UpdaterStarter\UpdaterStarter.cs" Line="3" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
