@@ -75,7 +75,7 @@ public class MainMenu : MonoBehaviour {
 		Application.Quit ();
 	}
 	public void UpdateGame() {
-		
+        updateStarter.StartUpdaterProgram();
 	}
 
 	public void ToOptionsMenu() {

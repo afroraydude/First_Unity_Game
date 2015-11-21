@@ -64,8 +64,8 @@ public class GetUpdateVersion : MonoBehaviour {
 	void GoAndUpdate(int i, DialogResult result) {
 		print ("Choice = " + result.ToString ());
 		if (result.ToString() == "YES_OK") {
-			Application.OpenURL ("https://github.com/afroraydude/First_Unity_Game/releases/latest");
-		}
+            updateStarter.StartUpdaterProgram();
+        }
 		MsgBox.Close();
 		PlayerPrefs.SetInt ("UpdateChecked", 1);
 	}
