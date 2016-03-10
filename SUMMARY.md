@@ -1,6 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* [Backend](backend.md)
+* [Backend](Docs/backend.md)
    * GameManager class
 
