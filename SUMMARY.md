@@ -1,5 +1,5 @@
 # Summary
 
 * [Introduction](README.md)
-* GameManager class
+* [GameManager class](Docs/gamemanager_class.md)
 
