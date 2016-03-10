@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* Backend
+* [Backend](backend.md)
    * GameManager class
-   * XMLLoader class
 
