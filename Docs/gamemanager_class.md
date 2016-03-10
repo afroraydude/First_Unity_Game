@@ -1,5 +1,5 @@
 # GameManager class
-This class manages many of the backend functions needed for scoring.
+This class manages the functions needed for scoring and for transitioning through levels.
 
 ##
 
