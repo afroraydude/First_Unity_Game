@@ -119,6 +119,9 @@ public class GameManager : MonoBehaviour {
 	// For when the player completes a level
 	public void CompleteLevel() {
 		paused = true;
+        if (Application.LoadedLevel == "MainMenu") {
+            Application.LoadLevel("Level1");
+        } else {
 		// If the high score is less than the time it took you to complete the level
 		if (highScore > startTime) {
 			// Make it equal the time it took you to complete the level
@@ -141,6 +144,7 @@ public class GameManager : MonoBehaviour {
 		}
 		
 		PlayerPrefs.Save();
+        }
 	}
 	
 	/** After LevelGrading is done, this happens so that we can load the level's scores */
