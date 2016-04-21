@@ -2,5 +2,5 @@
 
 * [Introduction](README.md)
 * [GameManager class](Docs/gamemanager_class.md)
-* Options class
+* [Options class](Docs/options_class.md)
 
