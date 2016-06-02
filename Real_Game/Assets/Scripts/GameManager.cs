@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour {
 	// For when the player completes a level
 	public void CompleteLevel() {
 		paused = true;
-        if (Application.LoadedLevel == "MainMenu") {
+        if (Application.loadedLevelName == "MainMenu") {
             Application.LoadLevel("Level1");
         } else {
 		// If the high score is less than the time it took you to complete the level
