@@ -21,20 +21,9 @@ public class MainMenu : MonoBehaviour {
 	public string versionText;
 	public float gotVersion;
 	public XMLParser xml;
-    public UpdaterStarter updateStarter;
 
     void Awake () {
         //ping = new Ping("8.8.8.8");
-        updateStarter = updateStarter.GetComponent<UpdaterStarter>();
-        if (PlayerPrefs.HasKey("ResHeight")){
-			Screen.SetResolution(PlayerPrefs.GetInt ("ResWidth"), PlayerPrefs.GetInt ("ResHeight"), false);
-			if(PlayerPrefs.GetInt("GoFullscreen") == 1) {
-				Screen.fullScreen = true;
-			}
-			else {
-				Screen.fullScreen = false;
-			}
-		}
 		xml = xml.GetComponent<XMLParser> ();
 		startButton = startButton.GetComponent<Button> ();
 		foolButton = foolButton.GetComponent<Button> ();
@@ -73,9 +62,6 @@ public class MainMenu : MonoBehaviour {
 		print ("Button 'Quit' has been pressed!");
 		Application.Quit ();
 	}
-	public void UpdateGame() {
-        updateStarter.StartUpdaterProgram();
-	}
 
 	public void ToOptionsMenu() {
 		Application.LoadLevel ("Options");
@@ -88,4 +74,9 @@ public class MainMenu : MonoBehaviour {
 	void OnApplicationQuit () {
 		PlayerPrefs.DeleteKey ("UpdateChecked");
 	}
+
+    void OnUpdateButtonPressed()
+    {
+        Application.OpenURL("http://afroraydude.pw/realgame/latest.zip");
+    }
 }
