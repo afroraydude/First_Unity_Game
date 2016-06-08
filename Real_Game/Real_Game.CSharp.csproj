@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Patrol.cs" />
     <Compile Include="Assets\Scripts\Patrol2.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\UpdateGame.cs" />
     <Compile Include="Assets\Scripts\WebFileLoader.cs" />
     <Compile Include="Assets\Scripts\WinScript.cs" />
     <Compile Include="Assets\Scripts\XMLParser.cs" />
