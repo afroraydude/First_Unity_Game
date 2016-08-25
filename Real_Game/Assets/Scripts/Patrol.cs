@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using com.afroraydude.unity.firstgame.inner;
 
 public class Patrol : MonoBehaviour 
 {
@@ -7,6 +8,7 @@ public class Patrol : MonoBehaviour
 	public Transform[] points;
 	private int destPoint = 0;
 	private NavMeshAgent agent;
+    public float minRemainingDistance = 0.5f;
 	
 	
 	void Start () {
@@ -40,7 +42,7 @@ public class Patrol : MonoBehaviour
 		// Choose the next destination point when the agent gets
 		// close to the current one.
 		if (!manager.paused) {
-			if (agent.remainingDistance < 0.5f) {
+			if (agent.remainingDistance < minRemainingDistance) {
 				GotoNextPoint ();
 			}
 			agent.enabled = true;

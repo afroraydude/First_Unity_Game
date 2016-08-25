@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using com.afroraydude.unity.firstgame.inner;
 
 public class PlayerMovement : MonoBehaviour {
 	public GameManager manager;

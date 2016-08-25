@@ -14,6 +14,4 @@ public class UpdateGame : MonoBehaviour {
 	void Update () {
 	
 	}
-
-    public 
 }

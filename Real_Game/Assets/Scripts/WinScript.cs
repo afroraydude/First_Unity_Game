@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using com.afroraydude.unity.firstgame.inner;
 
 /** Class for last screen/End Screen
  * Does the following

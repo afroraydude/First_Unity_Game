@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using com.afroraydude.unity.firstgame.inner;
 /** Class for the Main Menu
- * Contains/Does the following:
- * Manages GUI for the Main Menu
- * Go to level 1
- * That is about it
+* Contains/Does the following:
+* Manages GUI for the Main Menu
+* Go to level 1
+* That is about it
 */
 
 public class MainMenu : MonoBehaviour {
